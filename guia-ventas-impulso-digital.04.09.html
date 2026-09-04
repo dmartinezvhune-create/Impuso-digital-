@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Ventas Interactiva · IMPULSO DIGITAL · Closer Search</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#060606; --void-soft:#0F0F0F; --void-card:#131313; --void-card2:#191919;
+    --line:#242220;
+    --gold:#C9A84C; --gold-soft:#C9A96E; --gold-dim:#8E763A; --gold-glow:rgba(201,168,76,.10);
+    --teal:#4ABFA3; --teal-glow:rgba(74,191,163,.10); --teal-dim:rgba(74,191,163,.3);
+    --red:#D97B6B; --red-glow:rgba(217,91,91,.09); --red-dim:rgba(217,91,91,.3);
+    --ink:#EDE7D8; --ink-dim:#B4AC98; --ink-faint:#807A6C;
+    --radius:8px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--void); color:var(--ink); font-family:'DM Sans',sans-serif; font-size:15.5px; line-height:1.6; -webkit-font-smoothing:antialiased; padding-bottom:64px;}
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif; color:var(--ink); margin:0 0 .3em; font-weight:600; line-height:1.2;}
+  a{color:var(--gold);}
+  button{font-family:'DM Sans',sans-serif;}
+  label{font-size:.78rem; color:var(--ink-faint); display:block; margin-bottom:4px;}
+  input[type=text],input[type=tel],input[type=email],input[type=date],input[type=time],select,textarea{
+    width:100%; background:var(--void-card); border:1px solid var(--line); color:var(--ink);
+    border-radius:6px; padding:9px 11px; font-size:.86rem; font-family:'DM Sans',sans-serif;
+  }
+  input:focus,select:focus,textarea:focus{outline:1px solid var(--gold-dim);}
+
+  header.top{position:sticky; top:0; z-index:50; background:var(--void-soft); border-bottom:1px solid var(--gold-dim);}
+  .brandbar{display:flex; align-items:center; justify-content:space-between; padding:12px 22px; flex-wrap:wrap; gap:10px;}
+  .brandmark{display:flex; align-items:center; gap:10px;}
+  .brandmark svg{width:30px; height:30px;}
+  .brand-name{font-family:'Cinzel',serif; font-weight:600; font-size:.95rem; color:#fff; letter-spacing:.05em;}
+  .brand-name .search{color:var(--gold);}
+  .brand-title{font-size:.78rem; color:var(--ink-dim); margin-top:1px;}
+  .leadname-box{display:flex; align-items:center; gap:8px; font-size:.78rem; color:var(--ink-faint);}
+  .leadname-box input{width:170px;}
+
+  .tabs{display:flex; gap:4px; padding:0 22px; overflow-x:auto; background:#000; border-bottom:1px solid var(--line);}
+  .tabbtn{background:none; border:none; color:var(--ink-faint); padding:12px 14px; font-size:.82rem; cursor:pointer; white-space:nowrap; border-bottom:2px solid transparent;}
+  .tabbtn.active{color:var(--gold); border-bottom-color:var(--gold);}
+  .tabbtn:hover{color:var(--gold-soft);}
+
+  main{max-width:920px; margin:0 auto; padding:32px 22px 40px;}
+  .tabpanel{display:none;}
+  .tabpanel.active{display:block;}
+  .page-title{font-size:1.7rem; color:#fff;}
+  .lede{color:var(--ink-dim); max-width:68ch; margin-top:6px;}
+
+  table{width:100%; border-collapse:collapse; margin-top:16px; font-size:.88rem; background:var(--void-card); border-radius:var(--radius); overflow:hidden;}
+  thead th{background:#000; color:var(--gold); text-align:left; padding:10px 13px; font-size:.68rem; text-transform:uppercase; letter-spacing:.07em; font-weight:600; font-family:'Cinzel',serif; border-bottom:1px solid var(--gold-dim);}
+  tbody td{padding:10px 13px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-dim);}
+  tbody tr:last-child td{border-bottom:none;}
+  td.label{font-weight:600; color:var(--ink); white-space:nowrap;}
+
+  .callout{background:var(--gold-glow); border:1px solid var(--gold-dim); border-radius:var(--radius); padding:14px 18px; margin-top:16px; font-size:.87rem; color:var(--ink-dim);}
+  .callout strong{color:var(--gold);}
+  .callout.teal{background:var(--teal-glow); border-color:var(--teal-dim);}
+  .callout.teal strong{color:var(--teal);}
+  .callout.red{background:var(--red-glow); border-color:var(--red-dim);}
+  .callout.red strong{color:var(--red);}
+
+  .ficha-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px;}
+  .ficha-grid .full{grid-column:1/-1;}
+  .ficha-status{font-size:.8rem; color:var(--teal); margin-top:14px;}
+
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;}
+  .card{background:var(--void-card); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px;}
+  .card h4{font-size:1rem; margin-bottom:6px;}
+  .card p{margin:0; font-size:.87rem; color:var(--ink-dim);}
+
+  .flow-card{background:var(--void-card2); border:1px solid var(--gold-dim); border-radius:10px; padding:22px 24px; margin-top:18px;}
+  .flow-tag{font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--gold-dim); font-family:'Cinzel',serif; margin-bottom:8px;}
+  .flow-script{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.14rem; color:var(--ink); background:var(--gold-glow); border-left:3px solid var(--gold); padding:14px 18px; border-radius:0 6px 6px 0; margin:10px 0 16px;}
+  .flow-note{font-size:.85rem; color:var(--ink-dim); margin-bottom:14px;}
+  .flow-options{display:flex; flex-direction:column; gap:8px;}
+  .flow-opt{text-align:left; background:var(--void-card); border:1px solid var(--line); color:var(--ink); padding:11px 14px; border-radius:7px; font-size:.87rem; cursor:pointer; transition:.15s;}
+  .flow-opt:hover{border-color:var(--gold); color:var(--gold-soft);}
+  .flow-opt.obj{border-left:3px solid var(--red-dim);}
+  .flow-opt.win{border-left:3px solid var(--teal-dim);}
+  .flow-opt.warn{border-left:3px solid var(--gold-dim);}
+  .flow-navrow{display:flex; gap:10px; margin-top:16px;}
+  .flow-back{background:none; border:1px solid var(--line); color:var(--ink-faint); padding:8px 14px; border-radius:6px; font-size:.78rem; cursor:pointer;}
+  .flow-back:hover{color:var(--gold-soft); border-color:var(--gold-dim);}
+  .flow-restart{background:none; border:1px solid var(--line); color:var(--ink-faint); padding:8px 14px; border-radius:6px; font-size:.78rem; cursor:pointer;}
+  .flow-restart:hover{color:var(--gold-soft); border-color:var(--gold-dim);}
+  .overlay-label{font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--red); margin-bottom:6px; font-family:'Cinzel',serif;}
+  .flow-branch-label{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--gold-dim); margin-top:6px; font-family:'Cinzel',serif;}
+  .flow-branch-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:12px; margin-top:10px;}
+  .flow-branch{background:var(--void-card); border:2px solid var(--gold-dim); color:var(--ink); padding:16px 16px; border-radius:9px; font-size:.92rem; cursor:pointer; text-align:center; transition:.15s;}
+  .flow-branch:hover{border-color:var(--gold); color:var(--gold-soft); background:var(--gold-glow);}
+  .flow-branch.win{border-color:var(--teal-dim);}
+  .flow-branch.win:hover{border-color:var(--teal); color:var(--teal);}
+  .termometro-box{background:#000; border:1px solid var(--gold-dim); border-radius:8px; padding:14px 18px; margin-top:16px;}
+  .termometro-box .trow{display:flex; gap:16px; flex-wrap:wrap; margin-top:10px;}
+  .termometro-box input[type=number]{width:60px;}
+  .page-nav{display:flex; align-items:center; justify-content:space-between; gap:12px; max-width:920px; margin:26px auto 0; padding-top:20px; border-top:1px solid var(--line); flex-wrap:wrap;}
+  .page-nav-label{font-size:.78rem; color:var(--ink-faint); text-align:center; flex:1;}
+  .page-nav button:disabled{opacity:.35; cursor:default;}
+  @media (max-width:700px){
+    .flow-branch-row{grid-template-columns:1fr;}
+  }
+
+  .plan-section-label{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--gold-dim); font-family:'Cinzel',serif; margin:18px 0 8px;}
+  .plan-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:12px;}
+  .plan-card{background:var(--void-card); border:1px solid var(--line); border-radius:10px; padding:16px 16px 14px; display:flex; flex-direction:column; gap:8px; transition:.15s; position:relative;}
+  .plan-card:hover{border-color:var(--gold-dim); background:var(--gold-glow);}
+  .plan-card.pack{border-color:var(--gold-dim);}
+  .plan-card.reco{border-color:var(--teal);}
+  .plan-card.reco::after{content:'Recomendado'; position:absolute; top:-9px; right:12px; background:var(--teal); color:#04140b; font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:2px 8px; border-radius:10px;}
+  .plan-badge{font-size:.62rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-faint); font-family:'Cinzel',serif;}
+  .plan-card.pack .plan-badge{color:var(--gold-dim);}
+  .plan-name{font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:700; color:#fff; line-height:1.15;}
+  .plan-price{font-size:1.05rem; font-weight:700; color:var(--gold);}
+  .plan-price small{font-size:.78rem; font-weight:500; color:var(--ink-dim);}
+  .plan-desc{font-size:.82rem; color:var(--ink-dim); margin:0; line-height:1.45;}
+  .plan-desc strong{color:var(--ink);}
+  .plan-inc{font-size:.78rem; color:var(--ink-dim); margin:0; padding-left:16px; line-height:1.5;}
+  .plan-for{font-size:.78rem; color:var(--teal); margin:0;}
+  .plan-save{font-size:.74rem; color:var(--gold-soft); background:var(--gold-glow); border:1px dashed var(--gold-dim); border-radius:6px; padding:4px 8px; margin:0;}
+  .plan-pick{margin-top:auto; background:var(--gold); color:#060606; border:none; padding:9px 12px; border-radius:6px; font-size:.8rem; font-weight:600; cursor:pointer;}
+  .plan-pick:hover{background:var(--gold-soft);}
+  .plan-card.pack .plan-pick{background:var(--void-card2); color:var(--gold-soft); border:1px solid var(--gold-dim);}
+  .plan-card.pack .plan-pick:hover{background:var(--gold-glow);}
+  .plan-card.reco .plan-pick{background:var(--teal); color:#04140b; border:none;}
+  .plan-say{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--ink); background:var(--gold-glow); border-left:2px solid var(--gold); padding:8px 10px; border-radius:0 6px 6px 0; line-height:1.4;}
+  .plan-say em{font-style:normal; font-family:'DM Sans',sans-serif; font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--gold-dim); display:block; margin-bottom:3px;}
+  .plan-footnote{font-size:.76rem; color:var(--ink-faint); margin-top:10px;}
+  .flow-end{border-color:var(--teal-dim); background:var(--teal-glow);}
+  .flow-end .flow-tag{color:var(--teal);}
+
+  .schedule-box{background:#000; border:1px solid var(--gold-dim); border-radius:8px; padding:16px 18px; margin-top:14px;}
+  .schedule-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .schedule-row > div{flex:1; min-width:140px;}
+  .send-msg{background:var(--void-card); border:1px solid var(--line); border-radius:7px; padding:12px 14px; margin-top:12px; font-size:.83rem; color:var(--ink-dim); white-space:pre-wrap;}
+  .send-row{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;}
+  .btn{background:var(--gold); color:#060606; border:none; padding:9px 16px; border-radius:6px; font-size:.82rem; font-weight:600; cursor:pointer;}
+  .btn:hover{background:var(--gold-soft);}
+  .btn.ghost{background:none; border:1px solid var(--gold-dim); color:var(--gold-soft);}
+  .btn.wa{background:#25D366; color:#04140b;}
+  .btn.mail{background:var(--void-card); border:1px solid var(--gold-dim); color:var(--gold-soft);}
+
+  .checklist{list-style:none; padding:0; margin-top:16px;}
+  .checklist li{display:flex; gap:10px; align-items:flex-start; padding:7px 0; font-size:.88rem; color:var(--ink-dim); border-bottom:1px dashed var(--line);}
+  .checklist li:last-child{border-bottom:none;}
+  .checklist .box{flex:0 0 15px; width:15px; height:15px; border:1px solid var(--gold-dim); border-radius:2px; margin-top:2px;}
+
+  .export-box{background:#000; border:1px solid var(--gold-dim); border-radius:10px; padding:20px 22px; margin-top:18px; font-family:monospace; font-size:.82rem; white-space:pre-wrap; color:var(--ink-dim); max-height:420px; overflow:auto;}
+
+  .quickbar{position:fixed; left:0; right:0; bottom:0; z-index:60; background:#000; border-top:1px solid var(--gold-dim); padding:9px 22px; display:flex; gap:10px; flex-wrap:wrap; font-size:.78rem;}
+  .qgroup{display:inline-flex; align-items:center; gap:8px; background:var(--void-card); border:1px solid var(--line); border-radius:20px; padding:6px 12px; color:var(--ink-dim); text-decoration:none;}
+  .qgroup:hover{border-color:var(--gold-dim); color:var(--gold-soft);}
+
+  @media (max-width:700px){
+    .ficha-grid, .grid-2{grid-template-columns:1fr;}
+    main{padding:22px 14px 40px;}
+    .schedule-row > div{min-width:100%;}
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="brandbar">
+    <div class="brandmark">
+      <svg viewBox="0 0 100 100" fill="none">
+        <polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#C9A84C" stroke-width="3" fill="#060606"/>
+        <polygon points="50,16 79,32 79,68 50,84 21,68 21,32" stroke="#8E763A" stroke-width="1.2" fill="none"/>
+        <path d="M33 50 L45 62 L69 36" stroke="#C9A84C" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">CLOSER<span class="search"> SEARCH</span></div>
+        <div class="brand-title">Guía de Ventas Interactiva · IMPULSO DIGITAL</div>
+      </div>
+    </div>
+    <div class="leadname-box">Clínica: <input type="text" id="despachoInput" placeholder="Nombre de la clínica"></div>
+  </div>
+  <div class="tabs" id="tabs">
+    <button class="tabbtn active" data-tab="ficha">Ficha de la clínica</button>
+    <button class="tabbtn" data-tab="prospeccion">Prospección</button>
+    <button class="tabbtn" data-tab="oferta">Oferta y avatar</button>
+    <button class="tabbtn" data-tab="marcos">Marcos mentales</button>
+    <button class="tabbtn" data-tab="llamada1">Llamada 1 · Filtro y pitch</button>
+    <button class="tabbtn" data-tab="agendar-demo">Agendar demo</button>
+    <button class="tabbtn" data-tab="llamada2">Llamada 2 · Demo y cierre</button>
+    <button class="tabbtn" data-tab="cierre">Cierre y pagos</button>
+    <button class="tabbtn" data-tab="exportar">Exportar ficha</button>
+  </div>
+</header>
+
+<main>
+
+  <section class="tabpanel active" id="tab-ficha">
+    <h2 class="page-title">Ficha de la clínica</h2>
+    <p class="lede">Rellena esto al principio de la Llamada 1. Estos datos sustituyen etiquetas como [Clínica], [Ciudad] o [Plan] en los guiones, y alimentan los mensajes de WhatsApp/email y la ficha exportable.</p>
+    <div class="ficha-grid">
+      <div><label>Closer (quién hace la llamada)</label>
+        <input type="text" data-f="closer" oninput="setF(this)" placeholder="Tu nombre">
+      </div>
+      <div><label>Nombre del contacto</label><input type="text" data-f="contacto" oninput="setF(this)"></div>
+      <div><label>Nombre de la clínica / negocio</label><input type="text" data-f="despacho" oninput="setF(this)"></div>
+      <div><label>Tipo de negocio</label>
+        <select data-f="tipo" oninput="setF(this)">
+          <option value="">Elegir...</option>
+          <option>Clínica estética</option>
+          <option>Clínica dental</option>
+          <option>Clínica médica</option>
+          <option>Fisioterapia / otra clínica</option>
+          <option>Academia (2º vertical)</option>
+          <option>Otro sector</option>
+        </select>
+      </div>
+      <div><label>Origen del lead</label>
+        <select data-f="origen" oninput="setF(this)">
+          <option value="">Elegir...</option>
+          <option>Lead entrante (anuncio Meta)</option>
+          <option>Llamada en frío</option>
+          <option>Referido / partner sectorial</option>
+        </select>
+      </div>
+      <div><label>Rol del contacto</label>
+        <select data-f="rol" oninput="setF(this)">
+          <option value="">Elegir...</option>
+          <option>Propietario/a</option>
+          <option>Director/a médico</option>
+          <option>Responsable de recepción</option>
+          <option>Otro (sin capacidad de decisión)</option>
+        </select>
+      </div>
+      <div><label>Provincia / zona</label>
+        <select data-f="provincia" oninput="setF(this)">
+          <option value="">Elegir...</option>
+          <option>Álava</option><option>Albacete</option><option>Alicante</option><option>Almería</option>
+          <option>Asturias</option><option>Ávila</option><option>Badajoz</option><option>Barcelona</option>
+          <option>Burgos</option><option>Cáceres</option><option>Cádiz</option><option>Cantabria</option>
+          <option>Castellón</option><option>Ciudad Real</option><option>Córdoba</option><option>Cuenca</option>
+          <option>Gerona</option><option>Granada</option><option>Guadalajara</option><option>Guipúzcoa</option>
+          <option>Huelva</option><option>Huesca</option><option>Islas Baleares</option><option>Jaén</option>
+          <option>La Coruña</option><option>La Rioja</option><option>Las Palmas</option><option>León</option>
+          <option>Lérida</option><option>Lugo</option><option>Madrid</option><option>Málaga</option>
+          <option>Murcia</option><option>Navarra</option><option>Orense</option><option>Palencia</option>
+          <option>Pontevedra</option><option>Salamanca</option><option>Segovia</option><option>Sevilla</option>
+          <option>Soria</option><option>Tarragona</option><option>Santa Cruz de Tenerife</option><option>Teruel</option>
+          <option>Toledo</option><option>Valencia</option><option>Valladolid</option><option>Vizcaya</option>
+          <option>Zamora</option><option>Zaragoza</option><option>Ceuta</option><option>Melilla</option>
+        </select>
+      </div>
+      <div><label>Ciudad</label>
+        <select id="ciudad-select" onchange="handleCiudadSelect(this)">
+          <option value="">Elegir...</option>
+          <option>Madrid</option><option>Barcelona</option><option>Valencia</option><option>Sevilla</option>
+          <option>Zaragoza</option><option>Málaga</option><option>Murcia</option><option>Palma de Mallorca</option>
+          <option>Las Palmas de Gran Canaria</option><option>Bilbao</option><option>Alicante</option><option>Córdoba</option>
+          <option>Valladolid</option><option>Vigo</option><option>Gijón</option><option>L'Hospitalet de Llobregat</option>
+          <option>A Coruña</option><option>Vitoria-Gasteiz</option><option>Granada</option><option>Elche</option>
+          <option>Oviedo</option><option>Badalona</option><option>Cartagena</option><option>Terrassa</option>
+          <option>Jerez de la Frontera</option><option>Sabadell</option><option>Móstoles</option><option>Alcalá de Henares</option>
+          <option>Pamplona</option><option>Fuenlabrada</option><option>Almería</option><option>Leganés</option>
+          <option>Santander</option><option>San Sebastián</option><option>Castellón de la Plana</option><option>Burgos</option>
+          <option>Albacete</option><option>Getafe</option><option>Alcorcón</option><option>Salamanca</option>
+          <option>Logroño</option><option>Huelva</option><option>Marbella</option><option>Lleida</option>
+          <option>Tarragona</option><option>León</option><option>Badajoz</option><option>Cádiz</option>
+          <option>Toledo</option><option>Pontevedra</option><option>Girona</option><option>Ourense</option>
+          <option value="__otro__">Otra (escribir)</option>
+        </select>
+        <input type="text" id="ciudad-otro" data-f="ciudad" oninput="setF(this)" placeholder="Nombre de la ciudad" style="display:none; margin-top:6px;">
+      </div>
+      <div><label>Tamaño del equipo</label>
+        <select data-f="equipo" oninput="setF(this)">
+          <option value="">Elegir...</option>
+          <option>1-3 personas</option>
+          <option>4-10 personas</option>
+          <option>Más de 10 personas</option>
+        </select>
+      </div>
+      <div><label>Consultas / mensajes al día (aprox.)</label>
+        <select data-f="volumen" oninput="setF(this)">
+          <option value="">Elegir...</option>
+          <option>Menos de 10</option>
+          <option>Entre 10 y 30</option>
+          <option>Más de 30</option>
+        </select>
+      </div>
+      <div><label>¿Quién responde hoy las consultas?</label>
+        <select data-f="responde" oninput="setF(this)">
+          <option value="">Elegir...</option>
+          <option>El propietario / profesional</option>
+          <option>Recepción, en horario</option>
+          <option>Nadie fuera de horario / se responde tarde</option>
+          <option>Ya tienen algo automatizado</option>
+        </select>
+      </div>
+      <div><label>Teléfono fijo</label><input type="tel" data-f="telefono_fijo" oninput="setF(this)"></div>
+      <div><label>Teléfono móvil (para WhatsApp)</label><input type="tel" data-f="telefono_movil" oninput="setF(this)" placeholder="con prefijo, ej. 34..."></div>
+      <div><label>Email</label><input type="email" data-f="email" oninput="setF(this)"></div>
+      <div><label>Plan recomendado</label>
+        <select data-f="pack" oninput="setF(this)">
+          <option value="">Elegir...</option>
+          <option value="Landing Page (490€ setup + 70€/mes)">Landing Page · 490€ + 70€/mes</option>
+          <option value="Chatbot IA (790€ setup + 90€/mes)">Chatbot IA · 790€ + 90€/mes</option>
+          <option value="Agente de Voz IA (1.490€ setup + 180€/mes)">Agente de Voz IA · 1.490€ + 180€/mes</option>
+          <option value="Pack Starter (890€ setup + 90€/mes)">Pack Starter · 890€ + 90€/mes</option>
+          <option value="Pack Pro Growth (1.790€ setup + 190€/mes)">Pack Pro Growth · 1.790€ + 190€/mes</option>
+          <option value="Pack Premium (2.690€ setup + 270€/mes)">Pack Premium · 2.690€ + 270€/mes</option>
+        </select>
+      </div>
+      <div class="full"><label>Recurso de la demo (enlace del chatbot / agente de voz de demostración)</label><input type="text" data-f="crmlink" oninput="setF(this)" placeholder="Enlace de la demo o número del agente de voz"></div>
+      <div class="full"><label>Resultado Llamada 2 / notas de cierre</label><textarea rows="3" data-f="notas" oninput="setF(this)"></textarea></div>
+    </div>
+    <div class="ficha-status" id="ficha-status"></div>
+    <div class="send-row" style="margin-top:18px;">
+      <button class="btn" onclick="goTab('llamada1')">📞 Ir a la Llamada 1</button>
+      <button class="btn ghost" onclick="goTab('agendar-demo')">📅 Ir a Agendar demo</button>
+      <button class="btn ghost" onclick="goTab('llamada2')">📞 Ir a la Llamada 2 · Demo y cierre</button>
+      <button class="btn ghost" onclick="goTab('oferta')">📋 Ver Oferta y avatar</button>
+      <button class="btn ghost" onclick="goTab('cierre')">💳 Ver Cierre y pagos</button>
+    </div>
+    <div class="callout" id="meet-reminder" style="margin-top:18px;"><strong>Antes de tu primera llamada:</strong> configura el recurso fijo de demo del chatbot / agente de voz (una sola vez, se usa en todas las llamadas). <button class="btn ghost" style="margin-top:8px;" onclick="goTab('prospeccion')">🔗 Configurar recurso de demo</button></div>
+  </section>
+
+  <section class="tabpanel" id="tab-prospeccion">
+    <h2 class="page-title">Cómo llega la clínica y qué hacer antes de la Llamada 1</h2>
+    <p class="lede">Nos presentamos siempre como el equipo de Impulso Digital. El objetivo de la Llamada 1 nunca es vender un servicio ni un pack: es conseguir que la clínica acepte la demo gratuita de 30 minutos.</p>
+
+    <h3>Embudo de captación en tres fases</h3>
+    <table>
+      <thead><tr><th>Fase</th><th>Canal</th><th>Qué hace el closer</th><th>Ritmo</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Fase 1</td><td>Publicidad en Meta, formulario de leads (clínicas primero)</td><td>Responde al lead en menos de 5 minutos, cualifica y ofrece la demo</td><td>15-20 leads entrantes al día por closer</td></tr>
+        <tr><td class="label">Fase 2</td><td>Prospección telefónica en el vertical ganador</td><td>Base segmentada, franja horaria adecuada, filtro rápido, demo, registro; hasta 3 reintentos si no hay respuesta</td><td>50 llamadas efectivas al día por closer</td></tr>
+        <tr><td class="label">Fase 3</td><td>Referidos y partners sectoriales (asociaciones, colegios profesionales)</td><td>Canal de fondo, aportando casos citables</td><td>Según volumen</td></tr>
+      </tbody>
+    </table>
+    <div class="callout teal"><strong>Por qué en este orden:</strong> la publicidad de pago valida el mensaje y el vertical con datos reales antes de invertir en una base de prospección fría. El equipo se redimensiona con los datos de las primeras semanas de campaña.</div>
+
+    <h3>Checklist antes de marcar</h3>
+    <ul class="checklist">
+      <li><span class="box"></span> Nombre del contacto y de la clínica, y origen del lead (Meta, frío o referido)</li>
+      <li><span class="box"></span> Franja horaria correcta: a primera hora o a última hora del día, nunca en horario de consulta</li>
+      <li><span class="box"></span> Encaje aproximado con el avatar (clínica pequeña, 1-10 personas, sin recepción dedicada fuera de horario)</li>
+      <li><span class="box"></span> Recurso de demo del chatbot / agente de voz ya guardado en la Ficha de la clínica</li>
+      <li><span class="box"></span> Calendario libre para ofrecer franjas de la demo en la misma llamada</li>
+    </ul>
+    <div class="callout"><strong>Regla de la Llamada 1:</strong> nunca se da precio antes de la demo. La demo es donde se compara el coste con lo que cuesta hoy perder una consulta, y donde se pasa a la propuesta comercial. Cierre excepcional permitido solo si la clínica insiste en contratar ya sin esperar a la demo.</div>
+
+    <h3>Antes de colgar cada conversación</h3>
+    <ul class="checklist">
+      <li><span class="box"></span> Me presenté como Impulso Digital</li>
+      <li><span class="box"></span> No di precio antes de la demo</li>
+      <li><span class="box"></span> Propuse la demo gratuita de 30 minutos</li>
+      <li><span class="box"></span> Fijé día y hora concretos</li>
+      <li><span class="box"></span> Registré el resultado en el CRM (GoHighLevel)</li>
+    </ul>
+
+    <h3>Configuración general (una sola vez, se usa en todas las llamadas)</h3>
+    <div class="ficha-grid">
+      <div class="full">
+        <label>Recurso fijo de demo del chatbot / agente de voz (siempre el mismo)</label>
+        <input type="text" id="meetlink-input" placeholder="Enlace de la demo o número del agente de voz" oninput="setMeetLink(this.value)">
+      </div>
+    </div>
+    <div class="ficha-status" id="meetlink-status"></div>
+  </section>
+
+  <section class="tabpanel" id="tab-oferta">
+    <h2 class="page-title">Oferta y avatar de la clínica</h2>
+    <h3>Avatar (vertical de arranque: clínicas)</h3>
+    <p>Propietario, director médico o responsable de recepción con capacidad de decisión, en una clínica estética, dental o médica de 1 a 10 personas, sin departamento de marketing ni atención al cliente dedicado. Recibe consultas repetitivas por WhatsApp, Instagram o email fuera de horario y las pierde o las contesta tarde. Necesita confianza antes de decidir, en un sector donde el paciente también decide por confianza.</p>
+    <div class="callout"><strong>El dolor real:</strong> cada mensaje sin responder es un paciente que se va a la competencia, no por ser mejor, sino por haber contestado antes. Quiere dar imagen de clínica seria desde el primer contacto y captar más consultas sin aumentar plantilla ni depender de que alguien esté pendiente del móvil todo el día.</div>
+    <div class="callout teal"><strong>Idea clave para la conversación:</strong> en clínicas, la confianza es el argumento central. El Agente de Voz tiene aquí un encaje especialmente fuerte: la voz genera más confianza que el texto antes de que el paciente dé el paso.</div>
+
+    <h3>Servicios sueltos</h3>
+    <table>
+      <thead><tr><th>Servicio</th><th>Qué es</th><th>Setup</th><th>Mantenimiento</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Landing Page Profesional</td><td>Página de alta conversión adaptada al sector, con formulario integrado a WhatsApp y CRM</td><td>490€</td><td>70€/mes (actualizaciones y soporte)</td></tr>
+        <tr><td class="label">Chatbot Conversacional IA</td><td>Asistente virtual 24 horas en la web, entiende lenguaje natural, deriva a humano y agenda citas</td><td>790€</td><td>90€/mes</td></tr>
+        <tr><td class="label">Agente de Voz IA</td><td>Conversación de voz en tiempo real desde la web, agenda citas y transfiere a humano si hace falta</td><td>1.490€</td><td>180€/mes</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Packs estratégicos</h3>
+    <table>
+      <thead><tr><th>Pack</th><th>Incluye</th><th>Setup</th><th>Mantenimiento</th><th>Ahorro</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Starter</td><td>Landing, Chatbot IA y Pipeline de ventas</td><td>890€</td><td>90€/mes</td><td>390€ en setup y 70€/mes</td></tr>
+        <tr><td class="label">Pro Growth</td><td>Landing, Chatbot, Agente de Voz y Agenda automática</td><td>1.790€</td><td>190€/mes</td><td>980€ en setup y 150€/mes</td></tr>
+        <tr><td class="label">Premium</td><td>Embudo avanzado, Chatbot omnicanal, Agente de Voz multi idioma y CRM avanzado</td><td>2.690€</td><td>270€/mes</td><td>1.080€ en setup y 150€/mes</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><strong>Incluido en el mantenimiento:</strong> configuración y gestión del CRM GoHighLevel, alojamiento, infraestructura de IA, soporte y optimización continua. Base de conocimiento construida con la información real de la clínica (horarios, precios, servicios), derivación a humano, captura automática de datos al CRM y agenda de citas integrada.</div>
+
+    <h3>Fases del acompañamiento (tras el cierre)</h3>
+    <table>
+      <thead><tr><th>Fase</th><th>Qué se hace</th><th>Resultado esperado</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Días 1 a 7 (laborables) · Setup</td><td>Tras el pago, la activación del CRM GoHighLevel y la entrega de la información: construcción de la landing, entrenamiento del chatbot o agente de voz con la información real de la clínica, integración con WhatsApp y CRM</td><td>Sistema publicado y conectado a los canales reales en 5-7 días laborables</td></tr>
+        <tr><td class="label">Primeras semanas · Ajuste</td><td>Revisión de las primeras conversaciones reales para afinar tono, respuestas y base de conocimiento</td><td>Menos derivaciones a humano, más citas agendadas directamente</td></tr>
+        <tr><td class="label">Mantenimiento mensual</td><td>Revisión de analítica, ajuste de prompts y base de conocimiento según lo que preguntan los pacientes</td><td>El sistema mejora con el uso, sin intervención manual constante</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="tabpanel" id="tab-marcos">
+    <h2 class="page-title">Marcos mentales del closer</h2>
+    <div class="grid-2">
+      <div class="card"><h4>Somos el equipo de Impulso Digital</h4><p>En la llamada nos presentamos siempre como Impulso Digital, nunca como una empresa externa. "No vendemos tecnología. Vendemos resultados."</p></div>
+      <div class="card"><h4>Vender la demo, no el precio</h4><p>La clínica no compra un chatbot a ciegas: compra ver primero cómo respondería con su propia información y cuánto le cuesta hoy no responder a tiempo.</p></div>
+      <div class="card"><h4>La demo sustituye al argumento</h4><p>Ante la duda de si la IA puede hablar con sus pacientes, no se discute: se enseña. "No se lo explico, se lo hago probar."</p></div>
+      <div class="card"><h4>La Llamada 1 no vende, agenda</h4><p>Forzar el cierre en la primera llamada genera más resistencia que agendar una demo concreta de 30 minutos, entre consulta y consulta.</p></div>
+    </div>
+    <h3 style="margin-top:22px;">Qué se puede decir</h3>
+    <ul class="checklist">
+      <li><span class="box"></span> La demo es gratuita y sin compromiso</li>
+      <li><span class="box"></span> El sistema se entrena con la información real de la clínica</li>
+      <li><span class="box"></span> Deriva a un humano cuando la consulta es compleja</li>
+      <li><span class="box"></span> Se integra con el CRM y el WhatsApp que ya usan</li>
+      <li><span class="box"></span> Tiempo de respuesta inferior a 2 segundos y un +450% de leads cualificados, como cifras agregadas publicadas por Impulso Digital (referencia, no garantía)</li>
+    </ul>
+    <div class="callout red"><strong>Nunca prometer:</strong> un porcentaje concreto de aumento de pacientes o facturación sin haber hecho la demo, ni las cifras propias de Impulso Digital como garantía individual · que la IA da información médica, diagnósticos o consejo clínico · confidencialidad de datos de pacientes sin confirmar antes las condiciones de tratamiento de datos de salud · que sustituye por completo al personal de recepción · plazos de implementación más cortos que los reales (5-7 días laborables desde que hay pago, CRM activo e información completa) · que la licencia de GoHighLevel (20€/mes) está incluida: se paga aparte.</div>
+    <div class="callout teal"><strong>Datos de salud:</strong> el tratamiento de datos de pacientes es especialmente sensible por la normativa de protección de datos en el sector sanitario. Ante cualquier duda, no responder de forma improvisada: se traslada a Impulso Digital y se responde por escrito.</div>
+  </section>
+
+  <section class="tabpanel" id="tab-llamada1">
+    <h2 class="page-title">Llamada 1 · Filtro y pitch</h2>
+    <p class="lede">Objetivo: elegir el modelo según cómo llega la clínica (lead entrante de Meta o llamada en frío), cualificar rápido (volumen de consultas, quién responde), conectar con el dolor y proponer la demo gratuita de 30 minutos. Termina en tres caminos: hacer la demo ahora, cerrar sin demo, o agendar para otro momento.</p>
+    <div id="flow1-container"></div>
+  </section>
+
+  <section class="tabpanel" id="tab-agendar-demo">
+    <h2 class="page-title">Agendar demo</h2>
+    <p class="lede">Se llega aquí cuando la clínica prefiere fijar la demo para otro momento. Calendario, mensaje de confirmación y recordatorios (24h antes y el mismo día).</p>
+    <div id="flowAgendar-container"></div>
+  </section>
+
+  <section class="tabpanel" id="tab-llamada2">
+    <h2 class="page-title">Llamada 2 · Demo en vivo y cierre</h2>
+    <p class="lede">Se usa una vez confirmada la cita desde "Agendar demo". Objetivo: confirmar la cualificación, hacer probar el chatbot o el agente de voz en directo con la información de la clínica, comparar coste frente a consultas perdidas, presentar la oferta y cerrar.</p>
+    <div id="flow2-container"></div>
+  </section>
+
+  <section class="tabpanel" id="tab-cierre">
+    <h2 class="page-title">Cierre y pagos</h2>
+    <table>
+      <thead><tr><th>Condición</th><th>Detalle</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Pago</td><td>Setup por enlace de pago único y mantenimiento por suscripción mensual (enlace aparte). En proyectos de mayor inversión, setup fraccionable en 2 cuotas: 50% al contratar y 50% a los 30 días, previa confirmación con Impulso Digital</td></tr>
+        <tr><td class="label">Licencia CRM</td><td>El cliente necesita una cuenta de GoHighLevel a su nombre: 20€/mes (tarifa especial), se paga aparte y no es un pago a Impulso Digital. No está incluida en el setup ni en el mantenimiento</td></tr>
+        <tr><td class="label">Activación</td><td>Puesta en marcha estimada en 5-7 días laborables, una vez recibido el pago, activada la cuenta de GoHighLevel y entregada toda la información. Ajuste con conversaciones reales las primeras semanas y optimización continua con el mantenimiento</td></tr>
+        <tr><td class="label">Entrega</td><td>Landing, chatbot o agente de voz publicados y conectados a WhatsApp y CRM GoHighLevel, con agenda de citas integrada y derivación a humano</td></tr>
+        <tr><td class="label">Registro</td><td>Resultado y plan registrados en el CRM GoHighLevel según el catálogo de servicios</td></tr>
+      </tbody>
+    </table>
+    <h3 style="margin-top:22px;">Enlaces de pago</h3>
+    <table>
+      <thead><tr><th>Concepto</th><th>Importe</th><th>Enlace</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Landing Page · setup</td><td>490€</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8cabe9f9c8c807930b9cdb" target="_blank">link.fastpaydirect.com/.../6a8cabe9f9c8c807930b9cdb</a></td></tr>
+        <tr><td class="label">Landing Page · mantenimiento</td><td>70€/mes</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8cad4bd6768df054447b85" target="_blank">link.fastpaydirect.com/.../6a8cad4bd6768df054447b85</a></td></tr>
+        <tr><td class="label">Chatbot IA · setup</td><td>790€</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8cada9f9c8c807930b9cea" target="_blank">link.fastpaydirect.com/.../6a8cada9f9c8c807930b9cea</a></td></tr>
+        <tr><td class="label">Chatbot IA · mantenimiento</td><td>90€/mes</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8cadd5f9c8c807930b9ceb" target="_blank">link.fastpaydirect.com/.../6a8cadd5f9c8c807930b9ceb</a></td></tr>
+        <tr><td class="label">Agente de Voz · setup</td><td>1.490€</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8cadffd6768df054447b90" target="_blank">link.fastpaydirect.com/.../6a8cadffd6768df054447b90</a></td></tr>
+        <tr><td class="label">Agente de Voz · mantenimiento</td><td>180€/mes</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8cae32f9c8c807930b9cee" target="_blank">link.fastpaydirect.com/.../6a8cae32f9c8c807930b9cee</a></td></tr>
+        <tr><td class="label">Pack Starter · setup</td><td>890€</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8cae5ad6768df054447b95" target="_blank">link.fastpaydirect.com/.../6a8cae5ad6768df054447b95</a></td></tr>
+        <tr><td class="label">Pack Starter · mantenimiento</td><td>90€/mes</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8cae7af9c8c807930b9cf0" target="_blank">link.fastpaydirect.com/.../6a8cae7af9c8c807930b9cf0</a></td></tr>
+        <tr><td class="label">Pack Pro Growth · setup</td><td>1.790€</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8caea4d6768df054447b98" target="_blank">link.fastpaydirect.com/.../6a8caea4d6768df054447b98</a></td></tr>
+        <tr><td class="label">Pack Pro Growth · mantenimiento</td><td>190€/mes</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8caebcf9c8c807930b9cf2" target="_blank">link.fastpaydirect.com/.../6a8caebcf9c8c807930b9cf2</a></td></tr>
+        <tr><td class="label">Pack Premium · setup</td><td>2.690€</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8caeebd6768df054447b9b" target="_blank">link.fastpaydirect.com/.../6a8caeebd6768df054447b9b</a></td></tr>
+        <tr><td class="label">Pack Premium · mantenimiento</td><td>270€/mes</td><td><a href="https://link.fastpaydirect.com/payment-link/6a8caf04d6768df054447b9c" target="_blank">link.fastpaydirect.com/.../6a8caf04d6768df054447b9c</a></td></tr>
+        <tr><td class="label">Licencia CRM GoHighLevel (a nombre del cliente)</td><td>20€/mes</td><td><a href="https://buy.stripe.com/3cIbJ19gmfsDeK04gM1B60t" target="_blank">buy.stripe.com/3cIbJ19gmfsDeK04gM1B60t</a></td></tr>
+      </tbody>
+    </table>
+    <div class="callout teal"><strong>Verificado con el documento oficial de Impulso Digital (Closer Kit Completo):</strong> enlaces de Premium corregidos, la Landing sí lleva mantenimiento de 70€/mes, la licencia de GoHighLevel (20€/mes) va aparte y la puesta en marcha es de 5-7 días laborables.</div>
+  </section>
+
+  <section class="tabpanel" id="tab-exportar">
+    <h2 class="page-title">Exportar ficha</h2>
+    <p class="lede">Genera el resumen de la ficha de la clínica, listo para copiar y pegar en el CRM (GoHighLevel), o descargar en PDF. Los campos de closer, objeciones y bloque donde se detuvo la llamada quedan guardados para poder construir más adelante un informe de análisis agregado (tasa de cierre por closer, objeciones más frecuentes, dónde se pierden las llamadas, etc.).</p>
+    <button class="btn" onclick="guardarFichaActual()">💾 Guardar ficha</button>
+    <button class="btn ghost" onclick="nuevaFicha()">🆕 Nueva ficha en blanco</button>
+    <button class="btn" style="background:#D9534F; color:#fff;" onclick="exportPDF()">⬇ Exportar a PDF</button>
+    <div class="export-box" id="exportBox">Pulsa "Exportar a PDF" o revisa la pestaña Ficha de la clínica.</div>
+    <h3 style="margin-top:28px;">Fichas guardadas</h3>
+    <p class="lede">Todas las clínicas que has guardado hasta ahora. Pulsa "Cargar" para recuperar cualquiera.</p>
+    <div id="fichas-guardadas-list" style="margin-top:10px;"></div>
+  </section>
+  <div class="page-nav">
+    <button class="btn ghost" id="pageNavPrev" onclick="pageNav(-1)">← Página anterior</button>
+    <span class="page-nav-label" id="pageNavLabel"></span>
+    <button class="btn" id="pageNavNext" onclick="pageNav(1)">Página siguiente →</button>
+  </div>
+
+</main>
+
+<div class="quickbar">
+  <a class="qgroup" href="#" onclick="return openWA(fill('Hola [Contacto], le confirmamos la demo gratuita con Impulso Digital el ' + (formatFecha(ficha.fecha)||'[fecha]') + ' a las ' + (ficha.hora||'[hora]') + '. Un saludo.'));">📱 WhatsApp rápido</a>
+  <a class="qgroup" href="#" onclick="return openMail('Confirmación demo Impulso Digital', fill('Hola [Contacto], le confirmamos la demo gratuita con Impulso Digital el ' + (formatFecha(ficha.fecha)||'[fecha]') + ' a las ' + (ficha.hora||'[hora]') + '. Un saludo.'));">✉️ Email rápido</a>
+  <a class="qgroup" href="#" onclick="if(ficha.crmlink){window.open(ficha.crmlink,'_blank');}else{alert('Añade primero el recurso de demo en la Ficha de la clínica');} return false;">🖥️ Abrir demo</a>
+  <a class="qgroup" href="#" onclick="goTab('llamada1'); return false;">↺ Llamada 1</a>
+  <a class="qgroup" href="#" onclick="goTab('agendar-demo'); return false;">↺ Agendar demo</a>
+  <a class="qgroup" href="#" onclick="goTab('llamada2'); return false;">↺ Llamada 2</a>
+</div>
+
+<script>
+document.querySelectorAll('.tabbtn').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.querySelectorAll('.tabbtn').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.tabpanel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById('tab-'+b.dataset.tab).classList.add('active');
+    updatePageNav();
+  });
+});
+function goTab(name){
+  document.querySelectorAll('.tabbtn').forEach(x=>x.classList.toggle('active', x.dataset.tab===name));
+  document.querySelectorAll('.tabpanel').forEach(x=>x.classList.toggle('active', x.id==='tab-'+name));
+  updatePageNav();
+}
+
+const PAGE_ORDER = ['ficha','prospeccion','oferta','marcos','llamada1','agendar-demo','llamada2','cierre','exportar'];
+const PAGE_TITLES = {
+  ficha:'Ficha de la clínica', prospeccion:'Prospección', oferta:'Oferta y avatar', marcos:'Marcos mentales',
+  llamada1:'Llamada 1 · Filtro y pitch', 'agendar-demo':'Agendar demo', llamada2:'Llamada 2 · Demo y cierre', cierre:'Cierre y pagos', exportar:'Exportar ficha'
+};
+function currentTab(){
+  const active = document.querySelector('.tabbtn.active');
+  return active ? active.dataset.tab : 'ficha';
+}
+const TAB_FLOW = {llamada1:'flow1', 'agendar-demo':'flowAgendar', llamada2:'flow2'};
+function pageNav(dir){
+  if(dir===1){
+    const activeFlow = TAB_FLOW[currentTab()];
+    if(activeFlow){
+      const flows = {flow1:flow1, flow2:flow2, flowAgendar:flowAgendar};
+      const hist = flowHistory[activeFlow];
+      const curNode = hist[hist.length-1];
+      const node = flows[activeFlow][curNode];
+      if(node){
+        if(node.end){
+          let target = 'exportar';
+          if(activeFlow==='flow1' && node.success){ target = 'cierre'; }
+          if(activeFlow==='flow2' && node.success){ target = 'cierre'; }
+          goTab(target);
+          window.scrollTo({top:0, behavior:'smooth'});
+          return;
+        }
+        if(node.options && node.options.length === 1){
+          const o = node.options[0];
+          if(o.jumpFlowTo){ jumpFlow(o.jumpFlowTo.flow, o.jumpFlowTo.node); }
+          else if(o.pack){ choosePack(activeFlow, o.pack, o.next); }
+          else { renderFlow(activeFlow, o.next); }
+          window.scrollTo({top:0, behavior:'smooth'});
+          return;
+        }
+      }
+    }
+  }
+  const idx = PAGE_ORDER.indexOf(currentTab());
+  const next = idx + dir;
+  if(next < 0 || next >= PAGE_ORDER.length){ return; }
+  goTab(PAGE_ORDER[next]);
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function updatePageNav(){
+  const idx = PAGE_ORDER.indexOf(currentTab());
+  document.getElementById('pageNavPrev').disabled = (idx <= 0);
+  document.getElementById('pageNavNext').disabled = (idx >= PAGE_ORDER.length-1);
+  document.getElementById('pageNavLabel').textContent = (idx+1)+' / '+PAGE_ORDER.length+' · '+PAGE_TITLES[PAGE_ORDER[idx]];
+}
+updatePageNav();
+
+const LS = 'impulso_';
+let ficha = {};
+const FICHA_FIELDS = ['closer','contacto','despacho','tipo','origen','rol','provincia','ciudad','equipo','volumen','responde','telefono_fijo','telefono_movil','email','pack','crmlink','notas','fecha','hora','importancia','confianza'];
+FICHA_FIELDS.forEach(f=>{ ficha[f] = localStorage.getItem(LS+'f_'+f) || ''; });
+ficha.objeciones1 = JSON.parse(localStorage.getItem(LS+'objeciones1')||'[]');
+ficha.objeciones2 = JSON.parse(localStorage.getItem(LS+'objeciones2')||'[]');
+ficha.bloqueParada1 = localStorage.getItem(LS+'bloqueParada1') || '';
+ficha.bloqueParada2 = localStorage.getItem(LS+'bloqueParada2') || '';
+
+function setF(el){
+  ficha[el.dataset.f] = el.value;
+  localStorage.setItem(LS+'f_'+el.dataset.f, el.value);
+  if(el.dataset.f==='despacho'){
+    document.getElementById('despachoInput').value = el.value;
+    localStorage.setItem(LS+'despachoname', el.value);
+  }
+  document.getElementById('ficha-status').textContent = '✓ Guardado en este navegador';
+  refreshVisibleFlows();
+}
+function refreshVisibleFlows(){
+  ['flow1','flow2','flowAgendar'].forEach(flowName=>{
+    const hist = flowHistory[flowName];
+    if(hist && hist.length){
+      renderFlow(flowName, hist[hist.length-1], false);
+    }
+  });
+}
+
+function getFichasGuardadas(){
+  return JSON.parse(localStorage.getItem(LS+'fichas')||'[]');
+}
+function saveFichasGuardadas(arr){
+  localStorage.setItem(LS+'fichas', JSON.stringify(arr));
+}
+function guardarFichaActual(){
+  const snapshot = {};
+  FICHA_FIELDS.forEach(f=>{ snapshot[f] = ficha[f]||''; });
+  snapshot.objeciones1 = ficha.objeciones1||[];
+  snapshot.objeciones2 = ficha.objeciones2||[];
+  snapshot.bloqueParada1 = ficha.bloqueParada1||'';
+  snapshot.bloqueParada2 = ficha.bloqueParada2||'';
+  const arr = getFichasGuardadas();
+  const entry = {
+    id: 'f'+Date.now(),
+    despacho: ficha.despacho || '(sin nombre de clínica)',
+    contacto: ficha.contacto || '',
+    savedAt: new Date().toLocaleString('es-ES'),
+    data: snapshot
+  };
+  arr.push(entry);
+  saveFichasGuardadas(arr);
+  document.getElementById('ficha-status').textContent = '✓ Ficha guardada en la lista';
+  renderFichasGuardadas();
+}
+function cargarFicha(id){
+  const arr = getFichasGuardadas();
+  const entry = arr.find(e=>e.id===id);
+  if(!entry) return;
+  FICHA_FIELDS.forEach(f=>{
+    ficha[f] = entry.data[f]||'';
+    localStorage.setItem(LS+'f_'+f, ficha[f]);
+  });
+  ficha.objeciones1 = entry.data.objeciones1||[];
+  ficha.objeciones2 = entry.data.objeciones2||[];
+  ficha.bloqueParada1 = entry.data.bloqueParada1||'';
+  ficha.bloqueParada2 = entry.data.bloqueParada2||'';
+  localStorage.setItem(LS+'objeciones1', JSON.stringify(ficha.objeciones1));
+  localStorage.setItem(LS+'objeciones2', JSON.stringify(ficha.objeciones2));
+  localStorage.setItem(LS+'bloqueParada1', ficha.bloqueParada1);
+  localStorage.setItem(LS+'bloqueParada2', ficha.bloqueParada2);
+  aplicarFichaAlDOM();
+  document.getElementById('ficha-status').textContent = '✓ Ficha cargada: '+entry.despacho;
+}
+function eliminarFicha(id){
+  const arr = getFichasGuardadas().filter(e=>e.id!==id);
+  saveFichasGuardadas(arr);
+  renderFichasGuardadas();
+}
+function nuevaFicha(){
+  FICHA_FIELDS.forEach(f=>{
+    if(f==='closer') return;
+    ficha[f] = '';
+    localStorage.setItem(LS+'f_'+f, '');
+  });
+  ficha.objeciones1 = []; ficha.objeciones2 = [];
+  ficha.bloqueParada1 = ''; ficha.bloqueParada2 = '';
+  localStorage.setItem(LS+'objeciones1','[]');
+  localStorage.setItem(LS+'objeciones2','[]');
+  localStorage.setItem(LS+'bloqueParada1','');
+  localStorage.setItem(LS+'bloqueParada2','');
+  aplicarFichaAlDOM();
+  startFlow('flow1'); startFlow('flow2'); startFlow('flowAgendar');
+  document.getElementById('ficha-status').textContent = '✓ Ficha nueva, en blanco (se mantiene el closer)';
+}
+function aplicarFichaAlDOM(){
+  document.querySelectorAll('[data-f]').forEach(el=>{ el.value = ficha[el.dataset.f]||''; });
+  document.getElementById('despachoInput').value = ficha.despacho||'';
+  const ciudadPreset = [...ciudadSelect.options].some(o=>o.value===ficha.ciudad);
+  if(ficha.ciudad && ciudadPreset){ ciudadSelect.value = ficha.ciudad; ciudadOtro.style.display='none'; }
+  else if(ficha.ciudad){ ciudadSelect.value = '__otro__'; ciudadOtro.style.display='block'; ciudadOtro.value = ficha.ciudad; }
+  else { ciudadSelect.value=''; ciudadOtro.style.display='none'; }
+  refreshVisibleFlows();
+}
+function renderFichasGuardadas(){
+  const box = document.getElementById('fichas-guardadas-list');
+  const arr = getFichasGuardadas();
+  if(!arr.length){ box.innerHTML = '<div class="flow-note">Todavía no has guardado ninguna ficha.</div>'; return; }
+  let html = '';
+  arr.slice().reverse().forEach(e=>{
+    html += '<div class="card" style="margin-top:8px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">';
+    html += '<div><strong style="color:var(--gold-soft);">'+e.despacho+'</strong><br><span style="font-size:.8rem; color:var(--ink-faint);">'+(e.contacto?e.contacto+' · ':'')+e.savedAt+'</span></div>';
+    html += '<div class="send-row" style="margin:0;">';
+    html += '<button class="btn ghost" onclick="cargarFicha(\''+e.id+'\')">Cargar</button>';
+    html += '<button class="btn ghost" onclick="eliminarFicha(\''+e.id+'\')">Eliminar</button>';
+    html += '</div></div>';
+  });
+  box.innerHTML = html;
+}
+renderFichasGuardadas();
+
+document.querySelectorAll('[data-f]').forEach(el=>{
+  const f = el.dataset.f;
+  if(ficha[f]){ el.value = ficha[f]; }
+});
+document.getElementById('despachoInput').value = ficha.despacho || localStorage.getItem(LS+'despachoname') || '';
+document.getElementById('despachoInput').addEventListener('input', function(){
+  ficha.despacho = this.value;
+  localStorage.setItem(LS+'f_despacho', this.value);
+  localStorage.setItem(LS+'despachoname', this.value);
+  document.querySelectorAll('[data-f="despacho"]').forEach(i=>i.value=this.value);
+});
+
+const ciudadSelect = document.getElementById('ciudad-select');
+const ciudadOtro = document.getElementById('ciudad-otro');
+if(ficha.ciudad){
+  const presetOpt = [...ciudadSelect.options].some(o=>o.value===ficha.ciudad);
+  if(presetOpt){
+    ciudadSelect.value = ficha.ciudad;
+  } else {
+    ciudadSelect.value = '__otro__';
+    ciudadOtro.style.display = 'block';
+    ciudadOtro.value = ficha.ciudad;
+  }
+}
+function handleCiudadSelect(sel){
+  if(sel.value === '__otro__'){
+    ciudadOtro.style.display = 'block';
+    ciudadOtro.focus();
+  } else {
+    ciudadOtro.style.display = 'none';
+    ficha.ciudad = sel.value;
+    localStorage.setItem(LS+'f_ciudad', sel.value);
+    document.getElementById('ficha-status').textContent = '✓ Guardado en este navegador';
+    refreshVisibleFlows();
+  }
+}
+
+function fill(text){
+  return text
+    .replace(/\[Closer\]/g, ficha.closer || '[Closer]')
+    .replace(/\[Contacto\]/g, ficha.contacto || '[Contacto]')
+    .replace(/\[Despacho\]/g, ficha.despacho || 'su clínica')
+    .replace(/\[Clínica\]/g, ficha.despacho || 'su clínica')
+    .replace(/\[Provincia\]/g, ficha.provincia || '[zona]')
+    .replace(/\[Pack\]/g, ficha.pack || '[plan elegido]')
+    .replace(/\[fecha\]/g, formatFecha(ficha.fecha) || '[fecha]')
+    .replace(/\[hora\]/g, ficha.hora || '[hora]');
+}
+function formatFecha(iso){
+  if(!iso) return '';
+  const partes = iso.split('-');
+  if(partes.length !== 3) return iso;
+  const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const dia = parseInt(partes[2], 10);
+  const mes = meses[parseInt(partes[1], 10) - 1] || '';
+  return dia + ' de ' + mes;
+}
+function openWA(text){
+  const phone = (ficha.telefono_movil||'').replace(/\D/g,'');
+  if(!phone){ alert('Añade el teléfono móvil de la clínica en la Ficha de la clínica.'); return false; }
+  window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(text), '_blank');
+  return false;
+}
+function openMail(subject, body){
+  const email = ficha.email || '';
+  window.open('mailto:'+email+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body), '_blank');
+  return false;
+}
+
+let meetLink = localStorage.getItem(LS+'meetlink') || '';
+document.getElementById('meetlink-input').value = meetLink;
+function setMeetLink(val){
+  meetLink = val;
+  localStorage.setItem(LS+'meetlink', val);
+  document.getElementById('meetlink-status').textContent = '✓ Guardado en este navegador';
+  updateMeetReminder();
+}
+function updateMeetReminder(){
+  const el = document.getElementById('meet-reminder');
+  if(!el) return;
+  el.style.display = meetLink ? 'none' : 'block';
+}
+updateMeetReminder();
+function openMeet(){
+  if(!meetLink){ alert('Añade primero el recurso fijo de demo en la pestaña Prospección.'); return false; }
+  window.open(meetLink, '_blank');
+  return false;
+}
+function meetSendMsg(){
+  if(!meetLink){ return 'Añade primero el recurso fijo de demo en la pestaña Prospección.'; }
+  return fill('Hola [Contacto], le paso el enlace de la demo de Impulso Digital: '+meetLink+'. Pruébelo usted mismo ahora, seguimos al teléfono mientras tanto.');
+}
+function sendMeetLink(via){
+  if(!meetLink){ alert('Añade primero el recurso fijo de demo en la pestaña Prospección.'); return false; }
+  const msg = meetSendMsg();
+  if(via==='wa'){ return openWA(msg); }
+  return openMail('Recurso de la demo · Impulso Digital', msg);
+}
+
+// Opciones comunes tras el pitch de la demo
+const PITCH_OPTIONS = [
+  {t:'Hacer la demo ahora mismo, sin colgar', cls:'win', primary:true, next:'demo_ahora'},
+  {t:'Cerrar ya, sin necesidad de demo', primary:true, next:'cierre_excepcional'},
+  {t:'Agendar la demo para otro momento', cls:'win', primary:true, jumpFlowTo:{flow:'flowAgendar',node:'agendar'}},
+  {t:'Pide más información antes de decidir', next:'masinfo'},
+  {t:'Pregunta cuánto cuesta antes de decidir', next:'preg_precio'},
+  {t:'Objeción: "ya tengo una web o unas redes"', cls:'obj', next:'obj_yatengoweb'},
+  {t:'Objeción: "no confío en que un chatbot hable con mis pacientes"', cls:'obj', next:'obj_confianza_l1'},
+  {t:'Objeción: "no tengo tiempo para esto ahora"', cls:'obj', next:'obj_tiempo'}
+];
+
+function planOptions(prefix, cierreNode){
+  return [
+    {t:'Objeción: "es caro para lo que soy"', cls:'obj', next:prefix+'obj_caro'},
+    {t:'Objeción: "ya tengo una web o unas redes"', cls:'obj', next:prefix+'obj_web'},
+    {t:'Objeción: "no confío en que un chatbot hable con mis pacientes"', cls:'obj', next:prefix+'obj_confianza'},
+    {t:'Objeción: "¿y los datos de mis pacientes?"', cls:'obj', next:prefix+'obj_datos'},
+    {t:'Objeción: "¿cuánto tarda en estar funcionando?"', cls:'obj', next:prefix+'obj_plazos'},
+    {t:'Objeción: "tengo que hablarlo con mi socio"', cls:'obj', next:prefix+'obj_socio'},
+    {t:'Pregunta: "¿chatbot o agente de voz, cuál me conviene?"', next:prefix+'diferencia'},
+    {t:'Pregunta: "¿qué diferencia hay entre los packs?"', next:prefix+'packs_info'}
+  ];
+}
+
+const flow1 = {
+  start:{
+    tag:'¿Cómo llega la clínica?',
+    script:'Elige el modelo de conversación según el origen del contacto. En los dos casos, nos presentamos como Impulso Digital.',
+    note:'Fase 1: lead entrante de anuncio en Meta (responder en menos de 5 minutos). Fase 2: llamada en frío a una base segmentada del vertical ganador.',
+    options:[
+      {t:'Lead entrante (rellenó el formulario del anuncio)', cls:'win', primary:true, next:'apertura_lead'},
+      {t:'Llamada en frío', cls:'win', primary:true, next:'apertura_frio'}
+    ]
+  },
+  apertura_lead:{
+    tag:'Fase 1 · Apertura de cualificación (lead entrante)',
+    script:'"Hola [Contacto], soy [Closer], de Impulso Digital. Vi que rellenaste el formulario sobre el chatbot o el agente de voz para tu clínica. ¿Tienes 5 minutos ahora?"',
+    note:'Lead caliente: tono cercano, tutear si la persona lo hace. La velocidad de respuesta es lo que más pesa.',
+    options:[
+      {t:'Responde con interés / dice que sí', next:'cualif_volumen'},
+      {t:'"No recuerdo haber rellenado nada"', cls:'obj', next:'obj_norecuerda'},
+      {t:'Objeción: "no tengo tiempo ahora"', cls:'obj', next:'obj_tiempo'},
+      {t:'No responde / corta la llamada', cls:'warn', next:'noresponde'}
+    ]
+  },
+  apertura_frio:{
+    tag:'Fase 2 · Apertura (llamada en frío, 15-20s)',
+    script:'"Hola, soy [Closer], le llamo de Impulso Digital. Le contacto por [Clínica]. Ayudamos a clínicas a no perder pacientes por consultas que llegan fuera de horario y se contestan tarde, con asistentes de inteligencia artificial. ¿Tiene 30 segundos?"',
+    options:[
+      {t:'Responde con interés / dice que sí', next:'conexion_dolor'},
+      {t:'Objeción: "ya tengo una web o unas redes"', cls:'obj', next:'obj_yatengoweb'},
+      {t:'Objeción: "mándame información por email"', cls:'obj', next:'obj_email'},
+      {t:'Objeción: "no tengo tiempo ahora"', cls:'obj', next:'obj_tiempo'},
+      {t:'No es el decisor (recepción sin capacidad de decisión)', cls:'warn', next:'no_decisor'},
+      {t:'No responde / corta la llamada', cls:'warn', next:'noresponde'}
+    ]
+  },
+  obj_norecuerda:{
+    tag:'Reencuadre · no recuerda el formulario',
+    script:'"No pasa nada, fue un anuncio sobre cómo dejar de perder consultas de pacientes que llegan por WhatsApp o Instagram fuera de horario. Se lo resumo en un minuto y usted me dice si tiene sentido para su clínica."',
+    options:[
+      {t:'Acepta escuchar', next:'cualif_volumen'},
+      {t:'Insiste en que no le interesa', cls:'warn', next:'noresponde'}
+    ]
+  },
+  no_decisor:{
+    tag:'No es el decisor · conseguir acceso',
+    script:'"Entiendo. ¿Quién es la persona que decide estos temas en la clínica, y cuál es el mejor momento para hablar con ella, a primera hora o a última hora del día?"',
+    note:'Anotar nombre del decisor y franja horaria en la ficha. Reintentar hasta tres veces si no hay respuesta.',
+    options:[
+      {t:'Da nombre y franja horaria del decisor', next:'l1_pendiente'},
+      {t:'Pasa directamente con el decisor', cls:'win', next:'apertura_frio'}
+    ]
+  },
+  conexion_dolor:{
+    tag:'Conexión con el dolor',
+    script:'"¿Diría que reciben consultas fuera de horario, por WhatsApp, Instagram o email, que a veces no se llegan a contestar a tiempo?"',
+    note:'Si contesta que sí, ya tenemos el dolor sobre la mesa. Si dice que no, cualificar igualmente con volumen y quién responde.',
+    options:[
+      {t:'Sí, se pierden o se contestan tarde', cls:'win', next:'cualif_volumen'},
+      {t:'No, lo tienen controlado', next:'cualif_volumen'}
+    ]
+  },
+  cualif_volumen:{
+    tag:'Cualificación rápida 1/2 · Volumen',
+    script:'"¿Cuántas consultas o mensajes recibís al día aproximadamente?"',
+    note:'Registrar el volumen en la ficha. Menos de 10 al día no descarta, pero orienta hacia Chatbot o Starter en lugar de Agente de Voz.',
+    options:[
+      {t:'Más de 30 al día', cls:'win', next:'cualif_responde'},
+      {t:'Entre 10 y 30 al día', cls:'win', next:'cualif_responde'},
+      {t:'Menos de 10 al día', next:'cualif_responde'}
+    ]
+  },
+  cualif_responde:{
+    tag:'Cualificación rápida 2/2 · Quién responde',
+    script:'"¿Y quién los responde ahora mismo? ¿Usted, alguien de recepción, o se quedan sin contestar hasta el día siguiente?"',
+    options:[
+      {t:'El propio profesional o propietario', cls:'win', next:'pitch_profesional'},
+      {t:'Recepción, pero solo en horario', cls:'win', next:'pitch_recepcion'},
+      {t:'Nadie fuera de horario / se responde tarde', cls:'win', next:'pitch_nadie'},
+      {t:'Ya tienen algo automatizado y no quieren tocarlo', cls:'warn', next:'no_cumple_temprano'}
+    ]
+  },
+  pitch_profesional:{
+    tag:'Pitch de la demo (responde el propio profesional)',
+    script:'"Entonces cada mensaje le saca de consulta o se queda para la noche. Le propongo algo mejor que explicárselo por teléfono: una demo gratuita de 30 minutos donde le enseño cómo funcionaría un asistente entrenado con la información real de su clínica, sin compromiso. ¿Se lo enseño ahora mismo, o prefiere que lo agendemos entre consulta y consulta?"',
+    options:PITCH_OPTIONS
+  },
+  pitch_recepcion:{
+    tag:'Pitch de la demo (responde recepción en horario)',
+    script:'"Perfecto, entonces en horario están cubiertos. El problema suele ser lo que llega a las nueve de la noche o el domingo: ese paciente ya ha escrito a dos clínicas más. Le propongo una demo gratuita de 30 minutos donde le enseño cómo respondería un asistente con la información real de su clínica, sin sustituir a su recepción. ¿Se lo enseño ahora mismo, o prefiere que lo agendemos?"',
+    options:PITCH_OPTIONS
+  },
+  pitch_nadie:{
+    tag:'Pitch de la demo (nadie responde fuera de horario)',
+    script:'"Entonces cada consulta fuera de horario es un paciente que probablemente se va a la clínica que contestó antes. Le propongo una demo gratuita de 30 minutos, sin compromiso, donde le enseño cómo funcionaría con su propia clínica. ¿Se lo enseño ahora mismo, o prefiere que lo agendemos?"',
+    options:PITCH_OPTIONS
+  },
+  no_cumple_temprano:{
+    tag:'Fin · no cumple el filtro',
+    end:true,
+    script:'"Entiendo, si ya tienen un sistema con el que están satisfechos, no tiene sentido forzarlo. Si en algún momento cambia la situación, encantados de hablar."',
+    note:'Registrar en la ficha como clínica no admitida: ya tiene sistema propio y no quiere cambiarlo. No se ofrece demo.'
+  },
+  preg_precio:{
+    tag:'Reencuadre · no adelantar precio',
+    script:'"Prefiero que lo vea primero funcionando con su propia clínica, así el precio tiene sentido con lo que está recibiendo. En la demo lo comparamos con lo que le cuesta hoy perder una consulta, con sus propios números. Son 30 minutos."',
+    options:[
+      {t:'Acepta agendar la demo', jumpFlowTo:{flow:'flowAgendar',node:'agendar'}},
+      {t:'Acepta hacer la demo ahora', cls:'win', next:'demo_ahora'},
+      {t:'Insiste en saber el precio antes', cls:'warn', next:'preg_precio_insiste'}
+    ]
+  },
+  preg_precio_insiste:{
+    tag:'Reencuadre · insiste en el precio',
+    script:'"Le doy el marco sin cerrar cifra: hay servicios sueltos y packs, y el más básico para una clínica está por debajo de lo que cuesta un mes de una persona en recepción. Pero cuál le encaja depende de su volumen, y eso es justo lo que vemos en la demo."',
+    note:'No dar cifras concretas ni enlaces. Si sigue insistiendo, registrar como seguimiento pendiente.',
+    options:[
+      {t:'Acepta agendar la demo', jumpFlowTo:{flow:'flowAgendar',node:'agendar'}},
+      {t:'Sigue sin querer la demo', cls:'warn', next:'noresponde'}
+    ]
+  },
+  masinfo:{
+    tag:'Refuerzo con autoridad',
+    script:'"Le doy dos datos: el asistente responde en menos de 2 segundos, a cualquier hora, y deriva a una persona de su equipo cuando la consulta es compleja. La demo son 30 minutos con la información real de su clínica, y ahí ve si encaja o no."',
+    note:'Las cifras publicadas por Impulso Digital son referencia agregada, nunca garantía individual.',
+    options:[
+      {t:'Acepta agendar', jumpFlowTo:{flow:'flowAgendar',node:'agendar'}},
+      {t:'Acepta hacer la demo ahora', cls:'win', next:'demo_ahora'},
+      {t:'Objeción: "ya tengo una web o unas redes"', cls:'obj', next:'obj_yatengoweb'},
+      {t:'Objeción: "mándame información por email"', cls:'obj', next:'obj_email'}
+    ]
+  },
+  obj_yatengoweb:{
+    tag:'Reencuadre · ya tiene web o redes',
+    script:'"Esto no sustituye lo que ya tiene. Se conecta a su web y a su WhatsApp para que ninguna consulta se pierda, aunque usted no esté delante. La demo se la hago justo sobre su propia clínica, para que lo vea integrado."',
+    options:[
+      {t:'Acepta agendar tras el reencuadre', jumpFlowTo:{flow:'flowAgendar',node:'agendar'}},
+      {t:'Acepta hacer la demo ahora', cls:'win', next:'demo_ahora'},
+      {t:'Sigue reticente', next:'masinfo'}
+    ]
+  },
+  obj_confianza_l1:{
+    tag:'Reencuadre · confianza en la IA',
+    script:'"Es la duda más habitual, y la entiendo: en una clínica el paciente decide por confianza. Por eso la demo es gratuita y sin compromiso: usted mismo prueba cómo responde con la información real de su clínica antes de decidir nada."',
+    options:[
+      {t:'Acepta agendar tras el reencuadre', jumpFlowTo:{flow:'flowAgendar',node:'agendar'}},
+      {t:'Acepta hacer la demo ahora', cls:'win', next:'demo_ahora'},
+      {t:'Sigue reticente', next:'masinfo'}
+    ]
+  },
+  obj_email:{
+    tag:'Reencuadre · email',
+    script:'"Se la envío ahora mismo. Pero la demo existe porque cada clínica tiene un volumen y unas preguntas distintas; en 30 minutos ve si el encaje es real, algo que un email no le puede enseñar."',
+    options:[
+      {t:'Acepta agendar tras el reencuadre', jumpFlowTo:{flow:'flowAgendar',node:'agendar'}},
+      {t:'Insiste en solo email', cls:'warn', next:'noresponde'}
+    ]
+  },
+  obj_tiempo:{
+    tag:'Reencuadre · tiempo',
+    script:'"Lo entiendo, por eso son solo 30 minutos y se lo enseño con su propia clínica. ¿Qué día le viene mejor, entre consulta y consulta, a primera hora o a última hora?"',
+    options:[
+      {t:'Acepta agendar', jumpFlowTo:{flow:'flowAgendar',node:'agendar'}},
+      {t:'Sigue sin tiempo', cls:'warn', next:'noresponde'}
+    ]
+  },
+  noresponde:{
+    tag:'Fin de llamada · mensaje de seguimiento',
+    end:true,
+    sendable:true,
+    script:'"Seguimos trabajando con clínicas de la zona, y [Provincia] sigue siendo una prioridad para nosotros. En cuanto le venga bien, retomamos la conversación."',
+    message:'Hola [Contacto], le dejamos este mensaje de seguimiento del equipo de Impulso Digital: seguimos activando clínicas en su zona con asistentes de IA que responden las consultas fuera de horario. En cuanto le venga bien, retomamos la conversación y le enseñamos la demo gratuita. Un saludo.',
+    note:'Registrar en la ficha como seguimiento pendiente. Reintentar hasta tres veces si no hay respuesta. Envía el mensaje por WhatsApp o email con los botones de abajo.'
+  },
+  demo_ahora:{
+    tag:'Demo en la misma llamada ✓',
+    demoTools:true,
+    script:'"Perfecto, no colgamos entonces. Le paso el enlace de la demo y lo prueba usted mismo mientras seguimos al teléfono: pregúntele lo que le preguntaría un paciente."',
+    note:'1) Enviar el enlace de la demo por WhatsApp o abrir el agente de voz · 2) Dejar que la clínica pregunte precios, horarios o disponibilidad y vea cómo responde y deriva a humano.',
+    options:[{t:'Terminada la demo, preguntar impresión', next:'l1_diag_reaccion'}]
+  },
+  l1_diag_reaccion:{
+    tag:'Diagnóstico tras la demo 1/2',
+    script:'"¿Qué le ha parecido lo que acaba de probar?"',
+    options:[
+      {t:'Reacción positiva ("me gusta", "responde bien")', cls:'win', next:'l1_diag_utilidad'},
+      {t:'Reacción dudosa o poco entusiasta', cls:'warn', next:'l1_diag_reaccion_duda'}
+    ]
+  },
+  l1_diag_reaccion_duda:{
+    tag:'Reencuadre · reacción tibia',
+    script:'"Entiendo, a veces cuesta valorarlo a la primera. ¿Qué es lo que le genera más dudas: cómo responde, la integración con su WhatsApp y su agenda, el tema de los datos de pacientes, o el precio?"',
+    note:'Recordar que la demo es genérica: con la información real de su clínica el asistente responde mucho mejor.',
+    options:[
+      {t:'Aclarada la duda, seguimos', next:'l1_diag_utilidad'},
+      {t:'Duda de cómo responde → repetir demo', next:'demo_ahora'},
+      {t:'Duda sobre datos de pacientes', cls:'obj', next:'l1_obj_datos'}
+    ]
+  },
+  l1_diag_utilidad:{
+    tag:'Diagnóstico tras la demo 2/2',
+    script:'"¿Cree que esto podría ser útil para la clínica, tal y como lo acaba de ver funcionar?"',
+    options:[
+      {t:'Sí, claramente útil', cls:'win', next:'l1_planes'},
+      {t:'Podría ser, pero no está del todo seguro', next:'l1_diag_utilidad_duda'}
+    ]
+  },
+  l1_diag_utilidad_duda:{
+    tag:'Reencuadre antes de presentar la oferta',
+    script:'"Le entiendo. Por eso justo tiene sentido empezar por el Chatbot o por el pack Starter, para probar el sistema en su clínica sin comprometerse a gran escala."',
+    options:[{t:'Continuar a la oferta', next:'l1_planes'}]
+  },
+  l1_planes:{
+    tag:'Presentación de la oferta',
+    script:'"Le explico cómo funciona la oferta, porque es muy sencilla. Tenemos tres piezas: la Landing, que es la página que capta la consulta; el Chatbot, que la responde por texto las 24 horas; y el Agente de Voz, que la responde hablando. Cada una se puede contratar suelta, con un setup inicial y un mantenimiento mensual, o combinadas en tres packs, Starter, Pro Growth y Premium, que salen bastante más baratos que sumar las piezas. El mantenimiento incluye la gestión del CRM, el alojamiento y la infraestructura de IA; lo único aparte es la licencia del CRM GoHighLevel, 20 euros al mes a su nombre, que se lo digo ya para que no haya sorpresas. Por lo que me ha contado, yo empezaría por [uno], y le digo por qué."',
+    note:'Orientación: pocas consultas o quiere probar → Chatbot o Starter · volumen medio-alto y decisión por confianza → Agente de Voz o Pro Growth · varias sedes, varios idiomas → Premium.',
+    termometro:true,
+    planCards:'l1_cierre',
+    options:planOptions('l1_', 'l1_cierre')
+  },
+  l1_diferencia:{
+    tag:'Chatbot o Agente de Voz',
+    script:'"El Chatbot responde por texto en la web y agenda citas, es la puerta de entrada más económica. El Agente de Voz conversa en tiempo real, y en clínicas encaja muy bien porque la voz genera más confianza que el texto antes de que el paciente dé el paso. Los dos derivan a una persona de su equipo cuando hace falta."',
+    options:[{t:'Volver a la oferta', next:'l1_planes'}]
+  },
+  l1_packs_info:{
+    tag:'Diferencia entre packs',
+    script:'"Starter es Landing más Chatbot y pipeline de ventas, por 890€ en lugar de 1.280€. Pro Growth añade el Agente de Voz y la agenda automática, por 1.790€ en lugar de 2.770€. Premium es para clínicas con más sedes o idiomas: embudo avanzado, chatbot omnicanal, voz multi idioma y CRM avanzado, por 2.690€."',
+    options:[{t:'Volver a la oferta', next:'l1_planes'}]
+  },
+  l1_obj_caro:{
+    tag:'Reencuadre · precio',
+    script:'"Lo entiendo. Hagamos el cálculo con sus números: si de las consultas que me ha dicho se le escapa una sola a la semana por no contestar a tiempo, ¿cuánto vale ese paciente para la clínica a lo largo del año? El mantenimiento del Chatbot son 90€ al mes, bastante menos que una persona pendiente del móvil. Y si el setup le pesa, en proyectos como el suyo se puede fraccionar en dos cuotas, la mitad ahora y la mitad a 30 días; eso lo confirmo con Impulso Digital."',
+    options:[{t:'Volver a la oferta', next:'l1_planes'}]
+  },
+  l1_obj_web:{
+    tag:'Reencuadre · ya tiene web o redes',
+    script:'"Esto no sustituye lo que ya tiene. Se conecta a su web y a su WhatsApp para que ninguna consulta se pierda, aunque usted no esté delante. Si su web ya funciona, empezamos por el Chatbot o el Agente de Voz sueltos, sin Landing."',
+    options:[{t:'Volver a la oferta', next:'l1_planes'}]
+  },
+  l1_obj_confianza:{
+    tag:'Reencuadre · confianza en la IA',
+    script:'"Acaba de verlo responder con una información genérica. Con la información real de su clínica, horarios, precios, servicios, responde mucho mejor, y cuando la consulta es compleja o el paciente lo pide, pasa con una persona de su equipo. No da información médica ni diagnósticos."',
+    options:[{t:'Volver a la oferta', next:'l1_planes'}]
+  },
+  l1_obj_datos:{
+    tag:'Reencuadre · datos de pacientes',
+    script:'"Es una pregunta muy correcta y no se la voy a contestar de memoria. El asistente captura nombre, email y teléfono al CRM, y no gestiona historiales clínicos. Las condiciones exactas de tratamiento de datos de salud se las confirmo por escrito desde Impulso Digital antes de firmar nada."',
+    note:'No improvisar sobre protección de datos sanitarios. Anotar la duda en la ficha y trasladarla a Impulso Digital.',
+    options:[{t:'Volver a la oferta', next:'l1_planes'}]
+  },
+  l1_obj_plazos:{
+    tag:'Reencuadre · plazos',
+    script:'"La puesta en marcha son entre 5 y 7 días laborables desde que tenemos tres cosas: el pago, la cuenta del CRM activa y la información de su clínica, horarios, precios, servicios. Cuanto antes nos pase eso, antes está funcionando. Las primeras semanas lo afinamos con las conversaciones reales."',
+    options:[{t:'Volver a la oferta', next:'l1_planes'}]
+  },
+  l1_obj_socio:{
+    tag:'Reencuadre · decisión compartida',
+    script:'"Claro, es una decisión importante. Le envío un resumen de la oferta con el enlace de la demo para que lo prueben juntos, y agendamos una llamada breve con los dos para resolver dudas."',
+    sendable:true,
+    message:'Hola [Contacto], le envío el resumen de la oferta de Impulso Digital y el enlace de la demo, para que puedan probarlo juntos con calma. Cuando le venga bien, agendamos una llamada breve con los dos para resolver cualquier duda. Un saludo, equipo Impulso Digital.',
+    options:[{t:'Registrar seguimiento pendiente', next:'l1_pendiente'}]
+  },
+  l1_pendiente:{
+    tag:'Fin · seguimiento pendiente',
+    end:true,
+    script:'Registrar en la ficha y en el CRM la fecha de seguimiento y el nombre del decisor. No forzar el cierre en esta llamada.',
+    note:''
+  },
+  l1_cierre:{
+    tag:'Cierre y confirmación ✓',
+    end:true,
+    success:true,
+    jumpToTab:'cierre',
+    closeConfirm:true,
+    script:'"Perfecto, activamos [Pack]. Le confirmo por email los enlaces de pago del setup y del mantenimiento, y arrancamos el setup en cuanto lo tengamos. ¿A qué correo se lo envío?"',
+    note:'Objetivo cumplido: registrar plan e importe en la Ficha de la clínica y en el CRM. Escribe el correo y envía la confirmación con el botón de abajo.'
+  },
+  cierre_excepcional:{
+    tag:'Cierre excepcional en la misma sesión',
+    script:'Si la clínica está muy convencida y no quiere esperar a la demo, se puede saltar directamente a la presentación de la oferta.',
+    options:[{t:'Presentar oferta y cerrar', next:'l1_planes'}]
+  }
+};
+
+const flowAgendar = {
+  agendar:{
+    tag:'Cierre de la Llamada 1 ✓',
+    end:true,
+    success:true,
+    schedule:true,
+    script:'"¿Qué día y a qué hora le viene bien la demo, entre consulta y consulta? ¿Se lo confirmo por email o por WhatsApp?"',
+    note:'Elige día y hora abajo y envía la confirmación por WhatsApp o email. Registrar también en el CRM.'
+  }
+};
+
+const flow2 = {
+  start:{
+    tag:'Apertura de la demo',
+    script:'"Hola [Contacto], soy [Closer], del equipo de Impulso Digital, retomamos lo que quedamos: en estos 30 minutos le voy a enseñar cómo respondería un asistente a los pacientes de [Clínica]. Antes, le confirmo dos datos rápidos."',
+    options:[{t:'Pasar a cualificación', next:'cualif_gestion'}]
+  },
+  cualif_gestion:{
+    tag:'Cualificación · gestión actual',
+    script:'"¿Seguís respondiendo las consultas de WhatsApp, Instagram y web de forma manual, o ya tenéis algo automatizado que no querríais tocar?"',
+    note:'Volumen de consultas y quién responde ya se confirmaron en la Llamada 1, no repetirlos aquí.',
+    options:[
+      {t:'Siguen respondiendo de forma manual', cls:'win', next:'demo'},
+      {t:'Ya tienen todo automatizado y no quieren tocarlo', cls:'warn', next:'nocumple'}
+    ]
+  },
+  nocumple:{
+    tag:'Fin · no admitido',
+    end:true,
+    script:'"Entiendo, si ya tienen un sistema con el que están satisfechos, no tiene sentido forzarlo. Si en algún momento cambia la situación, encantados de hablar."',
+    note:'Registrar en ficha como clínica no admitida: ya tiene sistema propio y no quiere cambiarlo.'
+  },
+  demo:{
+    tag:'Demo en vivo · chatbot / agente de voz',
+    demoTools:true,
+    script:'"Le paso el enlace y lo prueba usted mismo ahora: pregúntele lo que le preguntaría un paciente, precio, horarios, si hay hueco esta semana. Y fíjese en cómo pide los datos y cómo deriva a una persona."',
+    note:'1) Enviar el enlace de la demo o abrir el agente de voz · 2) Dejar que la clínica pregunte libremente · 3) Señalar la captura de datos al CRM y la agenda de citas.',
+    options:[{t:'Terminada la demo, preguntar impresión', next:'diag_reaccion'}]
+  },
+  diag_reaccion:{
+    tag:'Diagnóstico tras la demo 1/2',
+    script:'"¿Qué le ha parecido lo que acaba de probar?"',
+    options:[
+      {t:'Reacción positiva ("me gusta", "responde bien")', cls:'win', next:'diag_utilidad'},
+      {t:'Reacción dudosa o poco entusiasta', cls:'warn', next:'diag_reaccion_duda'}
+    ]
+  },
+  diag_reaccion_duda:{
+    tag:'Reencuadre · reacción tibia',
+    script:'"Entiendo, a veces cuesta valorarlo a la primera. ¿Qué es lo que le genera más dudas: cómo responde, la integración con su WhatsApp y su agenda, el tema de los datos de pacientes, o el precio?"',
+    note:'Recordar que la demo es genérica: con la información real de su clínica el asistente responde mucho mejor.',
+    options:[
+      {t:'Aclarada la duda, seguimos', next:'diag_utilidad'},
+      {t:'Duda de cómo responde → repetir demo', next:'demo'},
+      {t:'Duda sobre datos de pacientes', cls:'obj', next:'l2_obj_datos'}
+    ]
+  },
+  diag_utilidad:{
+    tag:'Diagnóstico tras la demo 2/2',
+    script:'"¿Cree que esto podría ser útil para la clínica, tal y como lo acaba de ver funcionar?"',
+    options:[
+      {t:'Sí, claramente útil', cls:'win', next:'coste'},
+      {t:'Podría ser, pero no está del todo seguro', next:'diag_utilidad_duda'}
+    ]
+  },
+  diag_utilidad_duda:{
+    tag:'Reencuadre antes de presentar la oferta',
+    script:'"Le entiendo. Por eso justo tiene sentido empezar por el Chatbot o por el pack Starter, para probar el sistema en su clínica sin comprometerse a gran escala."',
+    options:[{t:'Continuar', next:'coste'}]
+  },
+  coste:{
+    tag:'Coste de no responder · con sus números',
+    script:'"Antes de hablar de precio, hagamos un cálculo rápido con lo que me contó: de las consultas que reciben al día, ¿cuántas cree que se quedan sin contestar a tiempo? ¿Y cuánto vale un paciente nuevo para la clínica a lo largo del año? Con eso tenemos el coste real de no responder."',
+    note:'Aquí es donde se compara la inversión con lo que cuesta perder una consulta, o con contratar a alguien solo para responder. Anotar las cifras que dé la clínica en las notas.',
+    options:[{t:'Hecho el cálculo, presentar la oferta', cls:'win', next:'packs'}]
+  },
+  packs:{
+    tag:'Presentación de la oferta',
+    script:'"Le explico cómo funciona la oferta, porque es muy sencilla. Tenemos tres piezas: la Landing, que es la página que capta la consulta; el Chatbot, que la responde por texto las 24 horas; y el Agente de Voz, que la responde hablando. Cada una se puede contratar suelta, con un setup inicial y un mantenimiento mensual, o combinadas en tres packs, Starter, Pro Growth y Premium, que salen bastante más baratos que sumar las piezas. El mantenimiento incluye la gestión del CRM, el alojamiento y la infraestructura de IA; lo único aparte es la licencia del CRM GoHighLevel, 20 euros al mes a su nombre, que se lo digo ya para que no haya sorpresas. Con el cálculo que acabamos de hacer, yo empezaría por [uno], y le digo por qué."',
+    note:'Orientación: pocas consultas o quiere probar → Chatbot o Starter · volumen medio-alto y decisión por confianza → Agente de Voz o Pro Growth · varias sedes, varios idiomas → Premium.',
+    termometro:true,
+    planCards:'cierre',
+    options:planOptions('l2_', 'cierre')
+  },
+  l2_diferencia:{
+    tag:'Chatbot o Agente de Voz',
+    script:'"El Chatbot responde por texto en la web y agenda citas, es la puerta de entrada más económica. El Agente de Voz conversa en tiempo real, y en clínicas encaja muy bien porque la voz genera más confianza que el texto antes de que el paciente dé el paso. Los dos derivan a una persona de su equipo cuando hace falta."',
+    options:[{t:'Volver a la oferta', next:'packs'}]
+  },
+  l2_packs_info:{
+    tag:'Diferencia entre packs',
+    script:'"Starter es Landing más Chatbot y pipeline de ventas, por 890€ en lugar de 1.280€. Pro Growth añade el Agente de Voz y la agenda automática, por 1.790€ en lugar de 2.770€. Premium es para clínicas con más sedes o idiomas: embudo avanzado, chatbot omnicanal, voz multi idioma y CRM avanzado, por 2.690€."',
+    options:[{t:'Volver a la oferta', next:'packs'}]
+  },
+  l2_obj_caro:{
+    tag:'Reencuadre · precio',
+    script:'"Lo entiendo. Volvamos al cálculo que hemos hecho: si se le escapa un solo paciente a la semana por no contestar a tiempo, ¿cuánto es eso al año? El mantenimiento del Chatbot son 90€ al mes, bastante menos que una persona pendiente del móvil. Y si el setup le pesa, en proyectos como el suyo se puede fraccionar en dos cuotas, la mitad ahora y la mitad a 30 días; eso lo confirmo con Impulso Digital."',
+    options:[{t:'Volver a la oferta', next:'packs'}]
+  },
+  l2_obj_web:{
+    tag:'Reencuadre · ya tiene web o redes',
+    script:'"Esto no sustituye lo que ya tiene. Se conecta a su web y a su WhatsApp para que ninguna consulta se pierda, aunque usted no esté delante. Si su web ya funciona, empezamos por el Chatbot o el Agente de Voz sueltos, sin Landing."',
+    options:[{t:'Volver a la oferta', next:'packs'}]
+  },
+  l2_obj_confianza:{
+    tag:'Reencuadre · confianza en la IA',
+    script:'"Acaba de verlo responder con una información genérica. Con la información real de su clínica, horarios, precios, servicios, responde mucho mejor, y cuando la consulta es compleja o el paciente lo pide, pasa con una persona de su equipo. No da información médica ni diagnósticos."',
+    options:[{t:'Volver a la oferta', next:'packs'}]
+  },
+  l2_obj_datos:{
+    tag:'Reencuadre · datos de pacientes',
+    script:'"Es una pregunta muy correcta y no se la voy a contestar de memoria. El asistente captura nombre, email y teléfono al CRM, y no gestiona historiales clínicos. Las condiciones exactas de tratamiento de datos de salud se las confirmo por escrito desde Impulso Digital antes de firmar nada."',
+    note:'No improvisar sobre protección de datos sanitarios. Anotar la duda en la ficha y trasladarla a Impulso Digital.',
+    options:[{t:'Volver a la oferta', next:'packs'}]
+  },
+  l2_obj_plazos:{
+    tag:'Reencuadre · plazos',
+    script:'"La puesta en marcha son entre 5 y 7 días laborables desde que tenemos tres cosas: el pago, la cuenta del CRM activa y la información de su clínica, horarios, precios, servicios. Cuanto antes nos pase eso, antes está funcionando. Las primeras semanas lo afinamos con las conversaciones reales."',
+    options:[{t:'Volver a la oferta', next:'packs'}]
+  },
+  l2_obj_socio:{
+    tag:'Reencuadre · decisión compartida',
+    script:'"Claro, es una decisión importante. Le envío un resumen de la oferta con el enlace de la demo para que lo prueben juntos, y agendamos una llamada breve con los dos para resolver dudas."',
+    sendable:true,
+    message:'Hola [Contacto], le envío el resumen de la oferta de Impulso Digital y el enlace de la demo, para que puedan probarlo juntos con calma. Cuando le venga bien, agendamos una llamada breve con los dos para resolver cualquier duda. Un saludo, equipo Impulso Digital.',
+    options:[{t:'Registrar seguimiento pendiente', next:'pendiente'}]
+  },
+  pendiente:{
+    tag:'Fin · seguimiento pendiente',
+    end:true,
+    script:'Registrar en la ficha y en el CRM la fecha de seguimiento con el socio. No forzar el cierre en esta llamada.',
+    note:''
+  },
+  cierre:{
+    tag:'Cierre y confirmación ✓',
+    end:true,
+    success:true,
+    jumpToTab:'cierre',
+    closeConfirm:true,
+    script:'"Perfecto, activamos [Pack]. Le confirmo por email los enlaces de pago del setup y del mantenimiento, y arrancamos el setup en cuanto lo tengamos. ¿A qué correo se lo envío?"',
+    note:'Objetivo cumplido: registrar plan e importe en la Ficha de la clínica y en el CRM. Escribe el correo y envía la confirmación con el botón de abajo.'
+  }
+};
+
+
+const PLANES = [
+  {key:'Landing Page (490€ setup + 70€/mes)', tipo:'Servicio suelto', nombre:'Landing Page Profesional', setup:'490€', mant:'70€/mes',
+   que:'Una página web de una sola pantalla pensada para que quien la visita deje sus datos o escriba por WhatsApp, no para "estar en internet".',
+   inc:['Diseño y copywriting adaptados al sector','Formulario de captación conectado a WhatsApp y CRM','Optimizada para móvil y tablet','Dominio personalizado'],
+   dice:'"La Landing es una página de una sola pantalla con un objetivo: que el paciente que llega deje sus datos o le escriba por WhatsApp. No es tener web, es tener una puerta de entrada que convierte. Son 490€ de setup y 70€ al mes de mantenimiento, con actualizaciones y soporte."',
+   para:'Clínicas sin web o con una web que no genera consultas.'},
+  {key:'Chatbot IA (790€ setup + 90€/mes)', tipo:'Servicio suelto', nombre:'Chatbot Conversacional IA', setup:'790€', mant:'90€/mes',
+   que:'Un asistente por texto que vive en la web y responde 24 horas como lo haría recepción: entiende lenguaje natural, contesta precios, horarios y servicios.',
+   inc:['Base de conocimiento con la información real de la clínica','Agenda citas directamente en el calendario','Deriva a una persona si la consulta es compleja','Captura nombre, email y teléfono al CRM'],
+   dice:'"El Chatbot es como tener a alguien de recepción respondiendo por texto en su web las 24 horas. Lo entrenamos con la información real de su clínica, horarios, precios, servicios, y responde en menos de dos segundos. Si la consulta es compleja o el paciente lo pide, pasa con una persona de su equipo. Y además agenda la cita directamente en su calendario y guarda nombre, email y teléfono en el CRM. Son 790€ de setup y 90€ al mes."',
+   para:'Clínicas con muchas preguntas repetitivas y poco volumen de llamadas.'},
+  {key:'Agente de Voz IA (1.490€ setup + 180€/mes)', tipo:'Servicio suelto', nombre:'Agente de Voz IA', setup:'1.490€', mant:'180€/mes',
+   que:'Lo mismo que el chatbot, pero hablando: una conversación de voz en tiempo real desde la web, que agenda citas y pasa la llamada a un humano si hace falta.',
+   inc:['Voz natural en tiempo real','Español, catalán, inglés o el idioma que necesite','Agenda de citas integrada','Transferencia a humano','Registra cada conversación en el CRM'],
+   dice:'"El Agente de Voz hace lo mismo que el chatbot, pero hablando: el paciente pulsa en la web y mantiene una conversación de voz en tiempo real, como si llamara a la clínica. En clínicas esto funciona especialmente bien, porque la voz genera más confianza que el texto antes de que el paciente dé el paso. Agenda la cita y, si hace falta, transfiere la llamada a una persona. Son 1.490€ de setup y 180€ al mes."',
+   para:'Clínicas donde el paciente decide por confianza: la voz genera más confianza que el texto.'},
+  {key:'Pack Starter (890€ setup + 90€/mes)', tipo:'Pack', nombre:'Pack Starter', setup:'890€', mant:'90€/mes', ahorro:'Ahorra 390€ en setup y 70€/mes frente a contratarlo suelto',
+   que:'La puerta de entrada completa: la landing que capta la consulta, el chatbot que la responde y un pipeline en el CRM para que ningún contacto se pierda.',
+   inc:['Landing Page Profesional','Chatbot Conversacional IA 24/7','Formulario inteligente de captura integrado al CRM','Bonus: configuración del pipeline de ventas'],
+   dice:'"El pack Starter es la puerta de entrada completa: la Landing que capta la consulta, el Chatbot que la responde, y un pipeline en el CRM para que ningún contacto se quede por el camino. Por separado serían 1.280€; en pack son 890€ de setup y 90€ al mes, así que ahorra 390€ y 70€ cada mes."',
+   para:'Quien quiere probar el sistema sin comprometerse a gran escala.'},
+  {key:'Pack Pro Growth (1.790€ setup + 190€/mes)', tipo:'Pack', nombre:'Pack Pro Growth', setup:'1.790€', mant:'190€/mes', ahorro:'Ahorra 980€ en setup y 150€/mes frente a contratarlo suelto', reco:true,
+   que:'El sistema completo de captación: landing, chatbot y agente de voz trabajando juntos, con la agenda automática para que las citas entren solas.',
+   inc:['Landing Page Profesional','Chatbot Conversacional IA','Agente de Voz IA','Agenda automática (Google Calendar/Outlook) en el CRM','Bonus: pipeline a medida, protocolo de derivación a humano y avisos por email/SMS'],
+   dice:'"Pro Growth es el sistema completo: Landing, Chatbot y Agente de Voz trabajando juntos, con la agenda automática para que las citas entren solas, tanto por texto como por voz. Por separado serían 2.770€; en pack son 1.790€ de setup y 190€ al mes, casi mil euros menos. Para una clínica como la suya es el que más recomendamos."',
+   para:'Clínicas con volumen medio-alto de consultas que quieren cubrir texto y voz.'},
+  {key:'Pack Premium (2.690€ setup + 270€/mes)', tipo:'Pack', nombre:'Pack Premium', setup:'2.690€', mant:'270€/mes', ahorro:'Ahorra 1.080€ en setup y 150€/mes frente a contratarlo suelto',
+   que:'Para clínicas más grandes: el embudo avanzado, el chatbot en todos los canales (web, WhatsApp, redes), el agente de voz en varios idiomas y un CRM avanzado.',
+   inc:['Embudo avanzado de captación (landing multi sección)','Chatbot omnicanal con base de conocimiento profunda','Agente de Voz multi idioma con transferencia en directo a teléfono humano','CRM GoHighLevel con automatizaciones personalizadas y soporte VIP'],
+   dice:'"Premium está pensado para clínicas más grandes: un embudo de captación avanzado, el chatbot en todos los canales, web, WhatsApp y redes, el agente de voz en varios idiomas y un CRM avanzado. Son 2.690€ de setup y 270€ al mes, con 1.080€ de ahorro frente a contratarlo suelto."',
+   para:'Varias sedes, pacientes internacionales o varios idiomas.'}
+];
+function renderPlanCards(flowName, nextNode){
+  const card = (p) => {
+    let h = '<div class="plan-card '+(p.tipo==='Pack'?'pack':'')+(p.reco?' reco':'')+'">';
+    h += '<div class="plan-badge">'+p.tipo+'</div>';
+    h += '<div class="plan-name">'+p.nombre+'</div>';
+    h += '<div class="plan-price">'+p.setup+' <small>setup</small> · '+p.mant.replace('/mes',' <small>/mes</small>')+'</div>';
+    h += '<p class="plan-desc"><strong>Qué es:</strong> '+p.que+'</p>';
+    h += '<div class="plan-say">🗣 <em>Cómo se lo explico:</em> '+p.dice+'</div>';
+    h += '<ul class="plan-inc">'+p.inc.map(i=>'<li>'+i+'</li>').join('')+'</ul>';
+    h += '<p class="plan-for">Ideal para: '+p.para+'</p>';
+    if(p.ahorro){ h += '<p class="plan-save">'+p.ahorro+'</p>'; }
+    h += '<button class="plan-pick" onclick="choosePack(\''+flowName+'\',\''+p.key.replace(/'/g,"\\'")+'\',\''+nextNode+'\')">Elegir '+p.nombre+' →</button>';
+    h += '</div>';
+    return h;
+  };
+  let html = '<div class="plan-section-label">Servicios sueltos</div><div class="plan-grid">';
+  html += PLANES.filter(p=>p.tipo!=='Pack').map(card).join('');
+  html += '</div><div class="plan-section-label">Packs con ahorro</div><div class="plan-grid">';
+  html += PLANES.filter(p=>p.tipo==='Pack').map(card).join('');
+  html += '</div>';
+  html += '<div class="plan-footnote">El mantenimiento incluye configuración y gestión del CRM GoHighLevel, alojamiento, infraestructura de IA y soporte. Aparte, la licencia de GoHighLevel cuesta 20€/mes (tarifa especial, a nombre del cliente, no es un pago a Impulso Digital). Puesta en marcha en 5-7 días laborables desde el pago, la activación del CRM y la entrega de la información. Setup fraccionable en 2 cuotas (50% + 50% a 30 días) previa confirmación.</div>';
+  return html;
+}
+
+const flowHistory = {flow1:['start'], flow2:['start'], flowAgendar:['agendar']};
+
+function renderFlow(flowName, nodeId, pushHistory){
+  if(pushHistory !== false){
+    flowHistory[flowName].push(nodeId);
+  }
+  const flows = {flow1:flow1, flow2:flow2, flowAgendar:flowAgendar};
+  const flow = flows[flowName];
+  const node = flow[nodeId];
+  if(!node) return;
+  const container = document.getElementById(flowName+'-container');
+  const isObjOrigin = /(^|_)obj_/.test(nodeId);
+  const objKey = flowName==='flow1' ? 'objeciones1' : (flowName==='flow2' ? 'objeciones2' : null);
+  if(objKey && isObjOrigin && ficha[objKey].indexOf(nodeId)===-1){
+    ficha[objKey].push(nodeId);
+    localStorage.setItem(LS+objKey, JSON.stringify(ficha[objKey]));
+  }
+  if(node.end){
+    const paradaKey = flowName==='flow1' ? 'bloqueParada1' : (flowName==='flow2' ? 'bloqueParada2' : 'bloqueParadaAgendar');
+    const val = node.tag + (node.success ? ' (éxito)' : ' (sin cierre)');
+    ficha[paradaKey] = val;
+    localStorage.setItem(LS+paradaKey, val);
+  }
+  let html = '<div class="flow-card'+(node.end?' flow-end':'')+'">';
+  if(isObjOrigin){ html += '<div class="overlay-label">⚠ Objeción de la clínica</div>'; }
+  html += '<div class="flow-tag">'+node.tag+'</div>';
+  html += '<div class="flow-script">'+fill(node.script)+'</div>';
+  if(node.note){ html += '<div class="flow-note">'+node.note+'</div>'; }
+  if(node.planCards){ html += renderPlanCards(flowName, node.planCards); html += '<div class="flow-note" style="margin-top:18px;">Si la clínica plantea una objeción o una pregunta antes de elegir:</div>'; }
+  if(node.options){
+    const primaryOpts = node.options.filter(o=>o.primary);
+    const secondaryOpts = node.options.filter(o=>!o.primary);
+    const optAction = (o) => o.jumpFlowTo
+      ? "jumpFlow('"+o.jumpFlowTo.flow+"','"+o.jumpFlowTo.node+"')"
+      : (o.pack
+        ? "choosePack('"+flowName+"','"+o.pack.replace(/'/g,"\\'")+"','"+o.next+"')"
+        : "renderFlow('"+flowName+"','"+o.next+"')");
+    if(primaryOpts.length){
+      html += '<div class="flow-branch-label">Caminos posibles desde aquí:</div>';
+      html += '<div class="flow-branch-row">';
+      primaryOpts.forEach(o=>{
+        html += '<button class="flow-branch '+(o.cls||'')+'" onclick="'+optAction(o)+'"><strong>'+o.t+'</strong></button>';
+      });
+      html += '</div>';
+      if(secondaryOpts.length){ html += '<div class="flow-note" style="margin-top:14px;">O si aún no está decidido:</div>'; }
+    }
+    if(secondaryOpts.length){
+      html += '<div class="flow-options">';
+      secondaryOpts.forEach(o=>{
+        html += '<button class="flow-opt '+(o.cls||'')+'" onclick="'+optAction(o)+'">'+o.t+'</button>';
+      });
+      html += '</div>';
+    }
+  }
+  if(node.termometro){
+    html += renderTermometro();
+  }
+  if(node.demoTools){
+    html += '<div class="send-row" style="margin-top:14px;">';
+    html += '<button class="btn" style="background:#1a73e8; color:#fff;" onclick="return openMeet();">🖥️ Abrir demo</button>';
+    html += '</div>';
+    html += '<div class="send-msg" id="msg-meetsend">'+meetSendMsg()+'</div>';
+    html += '<div class="send-row">';
+    html += '<button class="btn wa" onclick="return sendMeetLink(\'wa\');">📱 Enviar enlace de demo por WhatsApp</button>';
+    html += '<button class="btn mail" onclick="return sendMeetLink(\'mail\');">✉️ Enviar enlace de demo por email</button>';
+    html += '</div>';
+  }
+  if(node.schedule){
+    html += renderScheduleWidget();
+  }
+  if(node.closeConfirm){
+    html += '<div class="schedule-box">';
+    html += '<label>Correo electrónico de la clínica</label>';
+    html += '<input type="email" id="cierre-email-input" value="'+(ficha.email||'')+'" placeholder="correo@clinica.com" oninput="setCierreEmail(this.value)">';
+    html += '<div class="send-msg" id="msg-cierreconfirm">'+cierreConfirmMsg()+'</div>';
+    html += '<div class="send-row">';
+    html += '<button class="btn wa" onclick="return sendCierreConfirm(\'wa\');">📱 Enviar confirmación por WhatsApp</button>';
+    html += '<button class="btn mail" onclick="return sendCierreConfirm(\'mail\');">✉️ Enviar confirmación por email</button>';
+    html += '</div>';
+    html += '</div>';
+  }
+  if(node.sendable){
+    const msg = fill(node.message || node.script.replace(/^"|"$/g,''));
+    html += '<div class="schedule-box">';
+    html += '<label>Correo electrónico de la clínica</label>';
+    html += '<input type="email" value="'+(ficha.email||'')+'" placeholder="correo@clinica.com" oninput="setCierreEmail(this.value)">';
+    html += '<div class="send-msg">'+msg+'</div>';
+    html += '<div class="send-row">';
+    html += '<button class="btn wa" onclick="return openWA(\''+msg.replace(/'/g,"\\'")+'\');">📱 Enviar por WhatsApp</button>';
+    html += '<button class="btn mail" onclick="return openMail(\'Seguimiento Impulso Digital\', \''+msg.replace(/'/g,"\\'")+'\');">✉️ Enviar por email</button>';
+    html += '</div>';
+    html += '</div>';
+  }
+  if(node.jumpToTab){
+    html += '<div class="send-row" style="margin-top:16px;">';
+    html += '<button class="btn win-jump" style="background:var(--teal); color:#04140b; border:none; padding:12px 20px; border-radius:7px; font-weight:600; cursor:pointer;" onclick="goTab(\'exportar\'); renderExport();">→ Exportar ficha</button>';
+    html += '</div>';
+  }
+  html += '<div class="flow-navrow">';
+  html += '<button class="flow-back" onclick="goBack(\''+flowName+'\')">← Atrás</button>';
+  html += '<button class="flow-restart" onclick="startFlow(\''+flowName+'\')">↺ Reiniciar</button>';
+  html += '</div>';
+  html += '</div>';
+  container.innerHTML = html;
+  if(node.schedule){ refreshScheduleMsgs(); }
+}
+function goBack(flowName){
+  const hist = flowHistory[flowName];
+  if(hist.length > 1){ hist.pop(); }
+  const prev = hist[hist.length-1];
+  renderFlow(flowName, prev, false);
+}
+const FLOW_TAB = {flow1:'llamada1', flow2:'llamada2', flowAgendar:'agendar-demo'};
+function startFlow(flowName){
+  const startNode = flowName==='flowAgendar' ? 'agendar' : 'start';
+  flowHistory[flowName] = [startNode];
+  renderFlow(flowName, startNode, false);
+}
+function jumpFlow(flowName, nodeId){
+  goTab(FLOW_TAB[flowName] || flowName.replace('flow','llamada'));
+  flowHistory[flowName] = [nodeId];
+  renderFlow(flowName, nodeId, false);
+}
+function choosePack(flowName, packLabel, nextNode){
+  ficha.pack = packLabel;
+  localStorage.setItem(LS+'f_pack', packLabel);
+  document.querySelectorAll('[data-f="pack"]').forEach(s=>s.value=packLabel);
+  renderFlow(flowName, nextNode);
+}
+
+const PACK_DESCRIPTIONS = {
+  'Landing Page (490€ setup + 70€/mes)': 'Landing Page Profesional: página de alta conversión adaptada al sector, con formulario integrado a WhatsApp y CRM (490€ de setup + 70€/mes de mantenimiento)',
+  'Chatbot IA (790€ setup + 90€/mes)': 'Chatbot Conversacional IA: asistente virtual 24 horas en la web, entiende lenguaje natural, deriva a humano y agenda citas (790€ de setup + 90€/mes de mantenimiento)',
+  'Agente de Voz IA (1.490€ setup + 180€/mes)': 'Agente de Voz IA: conversación de voz en tiempo real desde la web, agenda citas y transfiere a humano si hace falta (1.490€ de setup + 180€/mes de mantenimiento)',
+  'Pack Starter (890€ setup + 90€/mes)': 'Pack Starter: Landing, Chatbot IA y Pipeline de ventas (890€ de setup + 90€/mes de mantenimiento; ahorro de 390€ en setup y 70€/mes)',
+  'Pack Pro Growth (1.790€ setup + 190€/mes)': 'Pack Pro Growth: Landing, Chatbot, Agente de Voz y Agenda automática (1.790€ de setup + 190€/mes de mantenimiento; ahorro de 980€ en setup y 150€/mes)',
+  'Pack Premium (2.690€ setup + 270€/mes)': 'Pack Premium: embudo avanzado, Chatbot omnicanal, Agente de Voz multi idioma y CRM avanzado (2.690€ de setup + 270€/mes de mantenimiento; ahorro de 1.080€ en setup y 150€/mes)'
+};
+const PACK_LINKS = {
+  'Landing Page (490€ setup + 70€/mes)': {setup:'https://link.fastpaydirect.com/payment-link/6a8cabe9f9c8c807930b9cdb', mant:'https://link.fastpaydirect.com/payment-link/6a8cad4bd6768df054447b85'},
+  'Chatbot IA (790€ setup + 90€/mes)': {setup:'https://link.fastpaydirect.com/payment-link/6a8cada9f9c8c807930b9cea', mant:'https://link.fastpaydirect.com/payment-link/6a8cadd5f9c8c807930b9ceb'},
+  'Agente de Voz IA (1.490€ setup + 180€/mes)': {setup:'https://link.fastpaydirect.com/payment-link/6a8cadffd6768df054447b90', mant:'https://link.fastpaydirect.com/payment-link/6a8cae32f9c8c807930b9cee'},
+  'Pack Starter (890€ setup + 90€/mes)': {setup:'https://link.fastpaydirect.com/payment-link/6a8cae5ad6768df054447b95', mant:'https://link.fastpaydirect.com/payment-link/6a8cae7af9c8c807930b9cf0'},
+  'Pack Pro Growth (1.790€ setup + 190€/mes)': {setup:'https://link.fastpaydirect.com/payment-link/6a8caea4d6768df054447b98', mant:'https://link.fastpaydirect.com/payment-link/6a8caebcf9c8c807930b9cf2'},
+  'Pack Premium (2.690€ setup + 270€/mes)': {setup:'https://link.fastpaydirect.com/payment-link/6a8caeebd6768df054447b9b', mant:'https://link.fastpaydirect.com/payment-link/6a8caf04d6768df054447b9c'}
+};
+function cierreConfirmMsg(){
+  const desc = PACK_DESCRIPTIONS[ficha.pack] || (ficha.pack || '[plan elegido]');
+  const links = PACK_LINKS[ficha.pack];
+  let linkTxt = '';
+  if(links && links.setup){
+    linkTxt = '\n\nEnlace de pago del setup: '+links.setup;
+    if(links.mant){ linkTxt += '\nEnlace de pago del mantenimiento mensual: '+links.mant; }
+  } else {
+    linkTxt = '\n\nEn breve le confirmamos los enlaces de pago exactos de este plan.';
+  }
+  return fill('Hola [Contacto],\n\nSegún nuestra conversación de hoy, le confirmamos que ha elegido el siguiente plan:\n\n'+desc+'.'+linkTxt+'\n\nEl mantenimiento incluye la gestión del CRM, el alojamiento y la infraestructura de IA. Aparte, para activar el CRM necesitará una cuenta de GoHighLevel a su nombre (20€/mes, tarifa especial, no es un pago a Impulso Digital): https://buy.stripe.com/3cIbJ19gmfsDeK04gM1B60t\n\nLa implementación arranca en cuanto recibamos el pago, la cuenta de GoHighLevel activa y la información de la clínica, y la puesta en marcha estimada es de 5 a 7 días laborables.\n\n¿Podría confirmarnos la recepción de este mensaje y darnos su conformidad para proceder? Quedamos a su disposición para cualquier duda.\n\nUn saludo,\nEquipo Impulso Digital');
+}
+function setCierreEmail(val){
+  ficha.email = val;
+  localStorage.setItem(LS+'f_email', val);
+  document.querySelectorAll('[data-f="email"]').forEach(i=>i.value=val);
+}
+function sendCierreConfirm(via){
+  if(!ficha.email){ alert('Escribe primero el correo de la clínica.'); return false; }
+  const msg = cierreConfirmMsg();
+  if(via==='wa'){ return openWA(msg); }
+  return openMail('Confirmación de plan · Impulso Digital', msg);
+}
+startFlow('flow1');
+startFlow('flow2');
+startFlow('flowAgendar');
+
+function renderTermometro(){
+  return `
+    <div class="termometro-box">
+      <strong style="color:var(--gold);">🌡️ Termómetro de cierre</strong>
+      <div class="flow-note" style="margin:6px 0 0;">Anota las dos cifras reales que ha dado la clínica. Quedan en la ficha como referencia objetiva de qué tan cerca está del cierre, y sirven de base para el futuro informe de análisis de rendimiento.</div>
+      <div class="trow">
+        <label>Importancia que le da a no perder consultas sin responder (1-10)
+          <input type="number" min="1" max="10" value="${ficha.importancia||''}" oninput="updateTermometro('importancia', this.value)">
+        </label>
+        <label>Confianza en que el sistema funcione con sus pacientes (1-10)
+          <input type="number" min="1" max="10" value="${ficha.confianza||''}" oninput="updateTermometro('confianza', this.value)">
+        </label>
+      </div>
+    </div>
+  `;
+}
+function updateTermometro(field, val){
+  ficha[field] = val;
+  localStorage.setItem(LS+'f_'+field, val);
+}
+
+function renderScheduleWidget(){
+  return `
+    <div class="schedule-box">
+      <div class="schedule-row">
+        <div><label>Día de la demo</label><input type="date" id="sch-fecha" value="${ficha.fecha||''}" onchange="ficha.fecha=this.value; localStorage.setItem(LS+'f_fecha', this.value); refreshScheduleMsgs();"></div>
+        <div><label>Hora de la demo</label><input type="time" id="sch-hora" value="${ficha.hora||''}" onchange="ficha.hora=this.value; localStorage.setItem(LS+'f_hora', this.value); refreshScheduleMsgs();"></div>
+      </div>
+      <div class="send-msg" id="msg-confirmacion"></div>
+      <div class="send-row">
+        <button class="btn wa" onclick="return openWA(document.getElementById('msg-confirmacion').textContent);">📱 Enviar confirmación por WhatsApp</button>
+        <button class="btn mail" onclick="return openMail('Confirmación demo Impulso Digital', document.getElementById('msg-confirmacion').textContent);">✉️ Enviar confirmación por email</button>
+      </div>
+
+      <div class="callout" style="margin-top:18px;"><strong>Recordatorio 24h antes</strong></div>
+      <div class="send-msg" id="msg-recordatorio24"></div>
+      <div class="send-row">
+        <button class="btn wa" onclick="return openWA(document.getElementById('msg-recordatorio24').textContent);">📱 Enviar recordatorio 24h</button>
+        <button class="btn mail" onclick="return openMail('Recordatorio demo Impulso Digital', document.getElementById('msg-recordatorio24').textContent);">✉️ Enviar recordatorio 24h</button>
+      </div>
+
+      <div class="callout" style="margin-top:18px;"><strong>Recordatorio mismo día</strong></div>
+      <div class="send-msg" id="msg-mismodia"></div>
+      <div class="send-row">
+        <button class="btn wa" onclick="return openWA(document.getElementById('msg-mismodia').textContent);">📱 Enviar recordatorio del día</button>
+        <button class="btn mail" onclick="return openMail('Hoy es la demo con Impulso Digital', document.getElementById('msg-mismodia').textContent);">✉️ Enviar recordatorio del día</button>
+      </div>
+      <button class="btn ghost" style="margin-top:16px;" onclick="goTab('llamada2')">📞 Pasar directo a la Llamada 2 · Demo y cierre</button>
+    </div>
+  `;
+}
+function refreshScheduleMsgs(){
+  const box1 = document.getElementById('msg-confirmacion');
+  if(!box1) return;
+  const f = formatFecha(ficha.fecha) || '[fecha]';
+  const h = ficha.hora || '[hora]';
+  box1.textContent = fill('Hola [Contacto], le confirmamos la demo gratuita de 30 minutos con Impulso Digital para el día '+f+' a las '+h+'. Le enseñaremos cómo funcionaría el asistente con su propia clínica, sin compromiso. Nos vemos entonces. Un saludo, equipo Impulso Digital.');
+  document.getElementById('msg-recordatorio24').textContent = fill('Hola [Contacto], le recordamos que mañana '+f+' a las '+h+' tenemos la demo agendada. Cualquier cambio, avíseme. Un saludo, equipo Impulso Digital.');
+  document.getElementById('msg-mismodia').textContent = fill('Hola [Contacto], hoy a las '+h+' tenemos la demo. Nos vemos en un rato. Un saludo, equipo Impulso Digital.');
+}
+
+function getFichaLines(){
+  return [
+    '=== FICHA DE LA CLÍNICA ===',
+    'Closer: '+(ficha.closer||'-'),
+    'Contacto: '+(ficha.contacto||'-'),
+    'Rol del contacto: '+(ficha.rol||'-'),
+    'Clínica / negocio: '+(ficha.despacho||'-'),
+    'Tipo de negocio: '+(ficha.tipo||'-'),
+    'Origen del lead: '+(ficha.origen||'-'),
+    'Provincia/zona: '+(ficha.provincia||'-'),
+    'Ciudad: '+(ficha.ciudad||'-'),
+    'Tamaño del equipo: '+(ficha.equipo||'-'),
+    'Consultas al día: '+(ficha.volumen||'-'),
+    'Quién responde hoy: '+(ficha.responde||'-'),
+    'Teléfono fijo: '+(ficha.telefono_fijo||'-'),
+    'Teléfono móvil: '+(ficha.telefono_movil||'-'),
+    'Email: '+(ficha.email||'-'),
+    'Plan: '+(ficha.pack||'-'),
+    'Recurso de demo: '+(ficha.crmlink||'-'),
+    'Fecha demo: '+(ficha.fecha||'-')+' · Hora: '+(ficha.hora||'-'),
+    'Termómetro · Importancia (1-10): '+(ficha.importancia||'-'),
+    'Termómetro · Confianza (1-10): '+(ficha.confianza||'-'),
+    'Objeciones en Llamada 1: '+(ficha.objeciones1.length ? ficha.objeciones1.join(', ') : '-'),
+    'Objeciones en Llamada 2: '+(ficha.objeciones2.length ? ficha.objeciones2.join(', ') : '-'),
+    'Bloque donde se detuvo Llamada 1: '+(ficha.bloqueParada1||'-'),
+    'Bloque donde se detuvo Llamada 2: '+(ficha.bloqueParada2||'-'),
+    'Notas de cierre (Llamada 2): '+(ficha.notas||'-'),
+    '',
+    'Generado desde la Guía de Ventas Impulso Digital · Closer Search'
+  ];
+}
+function renderExport(){
+  const lines = getFichaLines();
+  document.getElementById('exportBox').textContent = lines.join('\n');
+}
+function exportPDF(){
+  renderExport();
+  if(!window.jspdf){ alert('No se pudo cargar la librería de PDF. Comprueba tu conexión a internet e inténtalo de nuevo.'); return; }
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({unit:'pt', format:'a4'});
+  const marginX = 48;
+  let y = 56;
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(16);
+  doc.setTextColor(20,20,20);
+  doc.text('CLOSER SEARCH', marginX, y);
+  doc.setFontSize(10);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(120,95,30);
+  y += 16;
+  doc.text('Ficha de la clínica · Guía de Ventas Impulso Digital', marginX, y);
+  y += 8;
+  doc.setDrawColor(180,150,60);
+  doc.line(marginX, y, 547, y);
+  y += 26;
+
+  doc.setTextColor(30,30,30);
+  const lines = getFichaLines().filter(l => l && !l.startsWith('==='));
+  lines.forEach(line=>{
+    if(!line){ y += 8; return; }
+    const parts = line.split(': ');
+    if(parts.length >= 2 && parts[0].length < 40){
+      doc.setFont('helvetica','bold');
+      doc.setFontSize(10);
+      const label = parts[0]+': ';
+      doc.text(label, marginX, y);
+      const labelWidth = doc.getTextWidth(label);
+      doc.setFont('helvetica','normal');
+      const value = parts.slice(1).join(': ');
+      const wrapped = doc.splitTextToSize(value, 500 - labelWidth);
+      doc.text(wrapped, marginX + labelWidth, y);
+      y += 16 * wrapped.length;
+    } else {
+      doc.setFont('helvetica','italic');
+      doc.setFontSize(9);
+      doc.setTextColor(140,140,140);
+      doc.text(line, marginX, y);
+      doc.setTextColor(30,30,30);
+      y += 14;
+    }
+    if(y > 780){ doc.addPage(); y = 56; }
+  });
+
+  const fileName = 'ficha-'+(ficha.despacho ? ficha.despacho.replace(/\s+/g,'_') : 'clinica')+'.pdf';
+  doc.save(fileName);
+}
+</script>
+</body>
+</html>
